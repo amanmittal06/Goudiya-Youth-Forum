@@ -1,0 +1,7 @@
+.text{
+    text-align:justify;
+}
+.readOrHide {
+    color: rgb(192, 192, 192);
+    cursor: pointer;
+}

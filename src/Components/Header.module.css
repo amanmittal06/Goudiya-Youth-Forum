@@ -1,0 +1,46 @@
+.header{
+    height: 90px;
+    width: auto;
+    background-color: #6950a3;
+    /* position: fixed;
+    top: 0px; right: 0px; left: 0px; */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.headerLeft{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin: 7px;
+}
+
+.gyfLogo{
+    
+    height: 50px;
+    width: 50px;
+    border: transparent solid 2px;
+    border-radius: 50px;
+}
+
+.gyfTopHeading{
+    
+    font-family: "Poppins";
+    text-transform: capitalize;
+    font-weight: 300;
+    color: white;
+    font-size:17px;
+    padding: 8px;
+}
+
+.signUp{
+    text-decoration: none;
+    font-weight:400;
+    border: 1px solid white;
+    border-radius: 25px;
+    color: white;
+    padding: 5px;
+    margin: 10px;
+    flex-shrink: 2;
+}
