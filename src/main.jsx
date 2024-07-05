@@ -10,7 +10,7 @@ import SignUp from './Components/Sign up/SignUp.jsx'
 import Store from './Components/Store/Store.jsx'
 
 // const router = createBrowserRouter({
-//   basename: "/Goudiya-Youth-Forum/",
+//   basename: "/",
 //   routes: [
 //     {path:"/", element: <App/>, children: [
 //       {path: "/", element:<Home></Home>},
