@@ -14,7 +14,7 @@ const WelcomeMsgAndIntro=()=>{
     return (
         <div className={styles.container}>
 
-               <div className={styles.welcomeHeading}>GOUDIYA YOUTH FORUM<br></br>WELCOMES YOU!</div>
+               <div className={styles.welcomeHeading}>Goudiya Youth Forum<br></br>welcomes you!</div>
                <div className={styles.intro}>Step into a transformative journey with Goudiya Youth Forum, dedicated to empowering youth through the profound wisdom of ancient scriptures!</div>
 
                <div className={styles.aboutHeading}>About Goudiya Youth Forum</div>

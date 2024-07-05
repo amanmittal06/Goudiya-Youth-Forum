@@ -12,12 +12,13 @@
     z-index: -1;
     margin: 10% 0% 4% 0%;
     color: #6950a3;
-    font-size: xx-large;
+    font-size: x-large;
+    text-transform: uppercase;
     width:100%;
-    font-weight: bold;
+    font-weight: 600;
     font-size: 155%;
-    opacity: 1;
-    animation: 3s appear forwards;
+    /* opacity: 1;
+    animation: 3s appear forwards; */
 }
 
 .intro{
@@ -28,9 +29,10 @@
 
 .aboutHeading{
     font-weight: 400;
-    font-size: x-large;
+    font-size:120%;
     margin: 6% 0% 4% 0%;
     color: #6950a3;
+    /* color: black; */
 }
   
 .aboutDescription{
