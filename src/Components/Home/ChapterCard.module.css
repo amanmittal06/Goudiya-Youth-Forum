@@ -1,0 +1,50 @@
+.cardContainer{
+    margin: 10% 5% 10% 5%;
+    display: flex;
+    flex-direction: column;
+    align-items:center;
+    border-radius: 20px;
+    border: 0px solid #6950a3;
+    background-color: rgb(235,235,235);
+    background-color: #6950a3;
+    color: white;
+}
+
+.poster{
+    
+    width: 100%;
+    /* margin-top: 2.5%;  */
+    border-radius: 20px 20px 0px 0px;
+}
+.chapterDescription{
+    align-self: flex-start;
+    margin: 8%;
+}
+
+
+.chapterTitle{
+    font-weight: 500;
+    font-size: 140%;
+    margin: 2% 0% 2% 0%;
+}
+
+.address{
+   font-size: 92%;
+   margin: 2% 0% 2% 0%;
+}
+
+.timming{
+   font-size: 92%;
+   margin: 2% 0% 2% 0%;
+}
+
+.registrationButton{
+   width: 84%;
+   height: 35px;
+   margin-bottom: 8%;
+   font-size: 110%;
+   color: #6950a3;
+   background-color: white;
+   border: none;
+   border-radius: 5px;
+}

@@ -1,0 +1,15 @@
+.volumesAndSubscriptionContainer{
+  margin: 4% ;
+}
+
+.aboutHeading{
+  font-weight: 400;
+  font-size: x-large;
+  margin: 6% 0% 4% 0%;
+  
+}
+
+.text{
+  font-size: 95%;
+  text-align:justify;
+}

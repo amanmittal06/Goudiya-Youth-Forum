@@ -1,14 +1,13 @@
 import Footer from './Components/Footer'
 import Header from './Components/Header'
-import Newsletter from './Components/Pages/NewsLetter/NewsLetter'
 import './App.css'
+import { Outlet } from 'react-router-dom'
 
 function App() {
 
   return(
     <div className='app'>
-      {/* <Header></Header> */}
-      <Newsletter></Newsletter>
+      <Outlet></Outlet>
       <Footer></Footer>
     </div>
   )

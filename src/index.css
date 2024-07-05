@@ -2,4 +2,19 @@
     margin: 0;
     box-sizing: border-box;
     font-family: "Poppins";
+    font-weight: 300;
+    
+}
+
+html{
+    -webkit-tap-highlight-color: transparent;
+}
+
+@media (min-width:768px) {
+    body{
+        align-self: center;
+        width: 30%;
+        margin: 0% 35% 0% 35%;
+        border: 1px solid black;
+    }
 }

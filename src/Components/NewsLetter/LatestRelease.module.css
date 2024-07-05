@@ -1,0 +1,43 @@
+.latestReleaseContainer{
+    margin: 3% 10% 12% 10%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 2.5% 2.5% 0% 2.5%;
+    padding: 4%;
+    /* background-color: rgb(235, 235, 235); */
+    /* background-color: #6950a333; */
+    /* border: 1px solid black; */
+    border-radius: 10px ;
+    
+    
+}
+
+
+@keyframes typing {
+    from {width: 0%}
+    to {width: 100%}
+}
+
+.latestReleaseHeading{
+    font-size: 115%;
+    /* font-family: 'Courier New', Courier, monospace; */
+    margin-bottom: 1.5%;
+    font-weight:400;
+    color: #6950a3;
+    color: black;
+    white-space: nowrap;
+    overflow: hidden;
+    width:100%;
+    animation: typing 3s forwards;
+}
+
+.hrTag{
+    width: 100%;
+    height: 1px;
+    background-color: black;
+    /* background-color: #6950a3; */
+    border: none;
+}
+
+

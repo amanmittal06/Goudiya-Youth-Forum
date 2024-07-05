@@ -1,9 +1,10 @@
-.header{
+
+/* .header{
     height: 90px;
     width: auto;
     background-color: #6950a3;
-    /* position: fixed;
-    top: 0px; right: 0px; left: 0px; */
+    position: sticky;
+    top: 0px; right: 0px; left: 0px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -43,4 +44,34 @@
     padding: 5px;
     margin: 10px;
     flex-shrink: 2;
+} */
+
+
+
+.topBar{
+    background-color: rgb(255, 255, 255);
+    color: #6950a3;
+    position:sticky;
+    top: 0%;
+    padding: 4%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    text-align: center;
+    border-bottom: 1px inset #6950a3;
+    
+}
+
+.topBarHeading{
+    color: #6950a3;
+    font-size:150%;
+    font-weight: 300;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.motto{
+    font-size: 40%;
 }

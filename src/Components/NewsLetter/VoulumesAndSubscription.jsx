@@ -7,7 +7,7 @@ const VoulmesAndSubscription = () => {
         <div className={styles.volumesAndSubscriptionContainer}>
           <p className={styles.aboutHeading}>About Monthly Newsletter!</p>  
           <p className={styles.text}>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem architecto quis soluta facilis earum assumenda quisquam commodi reprehender.
+          Our monthly newsletter is your gateway to staying connected and informed about all the exciting activities and insights from the Goudiya Youth Forum.
           </p>
           <Subscription></Subscription>
           <AllVolumesButton></AllVolumesButton>
