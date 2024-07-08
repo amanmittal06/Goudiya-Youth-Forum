@@ -1,10 +1,11 @@
+import { Link } from 'react-router-dom'
 import styles from './AllVolumesButton.module.css'
 const AllVolumesButton =()=>{
 
     return(
 
         <div className={styles.allVolumes}>
-          <p className={styles.text}><a className={styles.allVolumesLink} href='#'>Click here</a> for previous volumes</p>
+          <p className={styles.text}><Link className={styles.allVolumesLink} to="/newsletter/archives" >Click here</Link> for previous volumes</p>
           
         </div>
     )

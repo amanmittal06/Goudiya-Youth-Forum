@@ -8,6 +8,7 @@ import Home from './Components/Home/Home.jsx'
 import About from './Components/About us/About.jsx'
 import SignUp from './Components/Sign up/SignUp.jsx'
 import Store from './Components/Store/Store.jsx'
+import AllVolumes from './Components/NewsLetter/AllVolumes.jsx'
 
 // const router = createBrowserRouter([
 //     {path:"/", element: <App/>, children: [
@@ -33,6 +34,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
           <Route path="store" element={<Store />} />
           <Route path="about-us" element={<About />} />
         </Route>
+        <Route path="/newsletter/archives" element={<AllVolumes/>} />
         <Route path="sign-up" element={<SignUp />} />
       </Routes>
     </BrowserRouter>
