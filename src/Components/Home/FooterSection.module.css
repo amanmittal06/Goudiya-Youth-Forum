@@ -4,8 +4,9 @@
     flex-direction: column;
     align-items: center;
     background-color: rgba(128, 128, 128, 0.336);
+    background-color: rgba(128, 128, 128, 0.199);
     color: #6950a3;
-    padding: 5%;
+    padding: 3%;
 }
 
 .usefulLinksContainer{
@@ -19,7 +20,7 @@
 .usefulLinks{
     text-decoration:underline;
     color: #6950a3;
-    margin: 2%;
+    margin: 1%;
     align-self: center;
     /* color: white; */
 }
@@ -35,7 +36,7 @@
 .footerLinks{
     color: #6950a3;
     font-size: 180%;
-    margin: 2% 4% 4% 2%;
+    margin: 1% 4% 1% 4%;
 }
 
 .copyright{

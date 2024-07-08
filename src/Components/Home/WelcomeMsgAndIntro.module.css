@@ -3,40 +3,101 @@
     to{opacity: 1}
 }
 
+@keyframes appearWelcomeMsg{
+    from{opacity: 0;}
+    to{opacity: 0.9;}
+}
+
 
 .container{
-  margin: 4%;
+  /* margin: 4%; */
+  padding: 5%;
+}
+
+.welcomeMessage{
+    /* background-color: black; */
+    /* background-color: rgba(128, 128, 128, 0.336); */
+    /* background-color: #6950a3; */
+    opacity: 0.9;
+     
+    margin: -2% -4.5% 0% -4.5%;
+    /* margin-top: 0%; */
+    color: white;
+    color: #6950a3;
+    color: black;
+    box-sizing: border-box;
+    border: 1px solid white;
+    padding: 4%;
+    display: flex;
+  
+    /* border: 1px solid rgba(0, 0, 0, 0.377); */
+    flex-direction: column;
+    animation: 2s appearWelcomeMsg forwards;
+    border-radius: 2px;
+    
+    box-shadow: 5px 5px 8px rgba(0, 0, 0, 0.377);
+
+
+}
+
+.cancelButton{
+    align-self: flex-end;
+    font-weight:light;
+    /* color: white; */
+    /* color: black; */
 }
 .welcomeHeading{
     position: relative;
-    z-index: -1;
-    margin: 10% 0% 4% 0%;
-    color: #6950a3;
+    /* z-index: -1; */
+    margin: 2% 0% 2% 0%;
+    /* color: #6950a3; */
     font-size: x-large;
-    text-transform: uppercase;
+    /* text-transform: uppercase; */
+    /* font-family: "Lucida Console", "Courier New", monospace ; */
     width:100%;
-    font-weight: 600;
-    font-size: 155%;
+    font-weight: 300;
+    font-size: 120%;
     /* opacity: 1;
     animation: 3s appear forwards; */
+    /* color: white; */
+    text-decoration: underline 0.9px;
 }
 
 .intro{
     text-align: justify;
-    font-weight:400;
-    color: black;
+    font-weight:300;
+    /* color: black; */
+    /* color: white; */
+    
 }
 
+
+.registerButton{
+    
+    height: 30px;
+    background-color: white;
+    color: black;
+    border: none;
+    /* border: 1px solid black; */
+    border-radius: 10px;
+    margin: 4% 2% 4% 2%;
+    /* color: #6950a3; */
+    font-size:110%;
+    background-color: #6950a3;
+    color: white;
+
+    
+}
 .aboutHeading{
-    font-weight: 400;
-    font-size:120%;
+    font-weight: 500;
+    font-size:180%;
     margin: 6% 0% 4% 0%;
     color: #6950a3;
     /* color: black; */
 }
   
 .aboutDescription{
-    font-size: 95%;
+    font-size: 100%;
     text-align:justify;
 }
 

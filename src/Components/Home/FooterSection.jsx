@@ -29,5 +29,4 @@ const FooterSection = () =>{
         </div>
     )
 }
-
 export default FooterSection

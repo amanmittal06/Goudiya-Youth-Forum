@@ -64,8 +64,9 @@
     /* text-align: center; */
     /* border-bottom: 1px inset #6950a3; */
     box-sizing: border-box;
-    box-shadow: 0px 1px 8px #6950a3;
+    /* box-shadow: 0px 1px 8px #6950a3; */
     height: 100px;
+    background-color: rgba(128, 128, 128, 0.199);
 }
 
 .topBarHeadingAndMotto{
@@ -80,7 +81,7 @@
 .topBarHeading{
     
     opacity: 1;
-    animation: 3s appear forwards;
+    /* animation: 3s appear forwards; */
 }
 
 @keyframes typing {
@@ -93,6 +94,6 @@
     white-space: nowrap;
     overflow: hidden;
     width:100%;
-    animation: typing 3s forwards;
+    /* animation: typing 3s forwards; */
    
 }

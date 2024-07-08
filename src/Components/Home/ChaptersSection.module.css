@@ -1,15 +1,16 @@
 .chaptersSectionContainer{
-    margin: 4%;
+    padding: 5%;
+    
 }
   
 .heading{
-    font-weight: 400;
-    font-size: 120%;
+    font-weight: 500;
+    font-size: 180%;
     margin-bottom: 2%;
     color: #6950a3;
 }
   
 .description{
-    font-size: 95%;
+    font-size: 100%;
     text-align:justify;
 }
