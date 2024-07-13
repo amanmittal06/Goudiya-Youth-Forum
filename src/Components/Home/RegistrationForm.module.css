@@ -7,6 +7,7 @@
 }
 .cancelButton{
     padding: 2px;
+    padding-top: 6px;
     font-size: larger;
     text-align: right;
 }
