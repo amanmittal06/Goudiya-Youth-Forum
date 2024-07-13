@@ -13,7 +13,7 @@ const RegistrationForm = () =>{
     console.log(chapterValue);
     
     function handleSubmit(event){
-      event.preventDefault();
+      // event.preventDefault();
     }
 
     return(
@@ -23,14 +23,14 @@ const RegistrationForm = () =>{
           <form action="#" method='post' id="registrationForm" className={styles.registrationForm}>
             
             <label className={styles.labels} htmlFor="fullName">Full name</label><br />
-            <input className={styles.inputs} type="text"  id='fullName'placeholder='Enter your full name' /><br />
+            <input className={styles.inputs} type="text"  id='fullName'placeholder='Enter your full name' required/><br />
             <label className={styles.labels} htmlFor="mobile">Mobile no.</label><br />
-            <input className={styles.inputs} type="tel" id="mobile" placeholder='Enter your mobile no.'/><br />
+            <input className={styles.inputs} type="tel" id="mobile" placeholder='Enter your mobile no.' required/><br />
             <label className={styles.labels} htmlFor="email">Email</label><br />
             <input className={styles.inputs} type="email"  id="email" placeholder='Enter your email address'/><br />
             <label className={styles.labels} htmlFor="chapter">Select chapter</label><br />
-            <select className={styles.inputs} id="chapter" defaultValue={chapterValue}>
-               {/* <option value="" disabled selected>Select chapter</option> */}
+            <select className={styles.inputs} id="chapter" defaultValue={chapterValue} required>
+               <option value="" disabled selected>Select chapter</option>
                <option value="GYF DELHI">Delhi Chapter</option>
                <option value="GYF NOIDA">Noida Chapter</option>
                <option value="GYF INTERNATIONAL">International Chapter</option>
