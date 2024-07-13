@@ -3,7 +3,7 @@
 import styles from './WelcomeMsgAndIntro.module.css'
 import gyfLogoPNG from './Images/gyfLogoPNG.png'
 import GouiyaYouthForum from './Images/GoudiyaYouthForum.png'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { RxCross2 } from "react-icons/rx";
 import RecentActivities from './RecentActivities';
 
@@ -23,6 +23,12 @@ const WelcomeMsgAndIntro=()=>{
             element2[i].style.marginTop= '3%';
         }
     }
+
+    const navigate = useNavigate();
+
+    function handleOnClick(){
+        navigate('/register' , {state: {chapterValue:undefined}});
+    }
     
     return (
         <div className={styles.container}>
@@ -31,8 +37,8 @@ const WelcomeMsgAndIntro=()=>{
                  <div className={styles.cancelButton}><RxCross2 onClick={handleCancelButton}/></div>
                  <div className={styles.welcomeHeading}>Register now!</div>
                  <div className={styles.intro}>Step into a transformative journey with Goudiya Youth Forum, dedicated to empowering youth through the profound wisdom of ancient scriptures!</div>
-
-                 <Link to='/register' className={styles.registerButton}>Register</Link>
+                 <button className={styles.registerButton} onClick={()=>{handleOnClick()}}>Register</button>
+                 {/* <Link to='/register' className={styles.registerButton}>Register</Link> */}
                </div>
                {/* <RecentActivities></RecentActivities> */}
                <div className={styles.aboutHeading}>About Goudiya Youth Forum</div>

@@ -4,7 +4,7 @@ import { IoIosPeople } from "react-icons/io";
 import { FaCartShopping } from "react-icons/fa6";
 
 import styles from './Footer.module.css'
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { useState } from "react";
 const bottomNavBarItems = [
     {name:'Home' , address:"/" , icon: <AiFillHome/> },
@@ -16,17 +16,12 @@ const bottomNavBarItems = [
  
 const Footer = () => {
 
-    const [activeLink, setActiveLink] = useState('Home');
-
-    const handleOnClick = (event, id) => {
-        console.log(event);
-        setActiveLink(id);
-    };
+    const {pathname} = useLocation();
     
     return(       
         
         <div className={styles.bottomNavBar}>
-            {bottomNavBarItems.map((NavBarItem)=>(<Link  onClick={(event)=>{handleOnClick(event, NavBarItem.name)}} className={activeLink==NavBarItem.name?styles.NavBarItemActive: styles.NavBarItemInactive} key={NavBarItem.name} to={`${NavBarItem.address}`}><>{NavBarItem.icon}{NavBarItem.name}</></Link>))}
+            {bottomNavBarItems.map((NavBarItem)=>(<Link className={pathname==NavBarItem.address?styles.NavBarItemActive: styles.NavBarItemInactive} key={NavBarItem.name} to={`${NavBarItem.address}`}><>{NavBarItem.icon}{NavBarItem.name}</></Link>))}
         </div>
 
     )
