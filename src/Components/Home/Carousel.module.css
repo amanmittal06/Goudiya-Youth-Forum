@@ -1,0 +1,38 @@
+.carouselContainer {
+    width: 100%;
+}
+
+.carouselImage {
+    width: 100%;
+    object-fit: cover;
+    border-radius: 20px;
+}
+
+.carouselCaption {
+    text-align: center;
+    margin-top: 10px;
+    font-size: 1.5rem;
+    color: #333;
+}
+
+
+
+.prevArrow, .nextArrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 120%;
+    /* color: white; */
+    color: #6950a3;
+    color: rgb(128, 128, 128);
+    cursor: pointer;
+    z-index: 1;
+}
+
+.prevArrow {
+    left: -20px;
+}
+
+.nextArrow {
+    right: -20px;
+}

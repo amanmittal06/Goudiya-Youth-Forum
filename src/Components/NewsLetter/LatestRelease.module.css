@@ -1,22 +1,25 @@
 .latestReleaseContainer{
-    margin: 3% 10% 12% 10%;
+   opacity: 1;
+   /* animation: appear 3s forwards; */
+   z-index: -1;
+}
+
+.latestReleaseHeadingContainer{
+    margin: 7% 14% 0% 14%;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    padding: 2.5% 2.5% 0% 2.5%;
-    padding: 4%;
-    /* background-color: rgb(235, 235, 235); */
-    /* background-color: #6950a333; */
-    /* border: 1px solid black; */
-    border-radius: 10px ;
-    
-    
 }
 
 
 @keyframes typing {
     from {width: 0%}
     to {width: 100%}
+}
+
+@keyframes appear {
+    from {opacity: 0}
+    to {opacity: 1}
 }
 
 .latestReleaseHeading{

@@ -1,11 +1,12 @@
 .volumesAndSubscriptionContainer{
-  margin: 4% ;
+  margin: 5% ;
 }
 
 .aboutHeading{
-  font-weight: 400;
-  font-size: x-large;
+  font-weight: 500;
+  font-size: 160%;
   margin: 6% 0% 4% 0%;
+  /* color: #6350a3; */
   
 }
 

@@ -9,6 +9,8 @@ import About from './Components/About us/About.jsx'
 import SignUp from './Components/Sign up/SignUp.jsx'
 import Store from './Components/Store/Store.jsx'
 import AllVolumes from './Components/NewsLetter/AllVolumes.jsx'
+import ScrollToTop from './Components/ScrollToTop.jsx'
+import RegistrationForm from './Components/Home/RegistrationForm.jsx'
 
 // const router = createBrowserRouter([
 //     {path:"/", element: <App/>, children: [
@@ -26,16 +28,17 @@ ReactDOM.createRoot(document.getElementById('root')).render(
     {/* <RouterProvider router={router.routes}><App></App></RouterProvider> */}
 
     <BrowserRouter basename="/Goudiya-Youth-Forum/"> {/* Replace with your base URL */}
-
+      <ScrollToTop/>
       <Routes>
         <Route path="/" element={<App />}>
           <Route index element={<Home />} />
           <Route path="newsletter" element={<Newsletter />} />
-          <Route path="store" element={<Store />} />
-          <Route path="about-us" element={<About />} />
+          
         </Route>
+        <Route path="about-us" element={<About />} />
+        <Route path="/store" element={<Store />} />
         <Route path="/newsletter/archives" element={<AllVolumes/>} />
-        <Route path="sign-up" element={<SignUp />} />
+        <Route path="/register" element={<RegistrationForm />} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>,

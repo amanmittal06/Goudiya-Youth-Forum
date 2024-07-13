@@ -42,10 +42,12 @@
 
 .cancelButton{
     align-self: flex-end;
+    text-align: center;
     font-weight:light;
-    /* color: white; */
-    /* color: black; */
+    font-size: large;
+
 }
+
 .welcomeHeading{
     position: relative;
     /* z-index: -1; */
@@ -85,13 +87,15 @@
     font-size:110%;
     background-color: #6950a3;
     color: white;
+    text-decoration: none;
+    text-align: center;
 
     
 }
 .aboutHeading{
     font-weight: 500;
     font-size:180%;
-    margin: 6% 0% 4% 0%;
+    margin: 6% 0% 5% 0%;
     color: #6950a3;
     /* color: black; */
 }

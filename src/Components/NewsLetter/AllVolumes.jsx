@@ -1,6 +1,9 @@
 import { useState } from "react";
 import NewsLetterCard from "./NewsLetterCard";
 import vol10CoverPage from './Images/vol10CoverPage.jpg'
+import ScrollToTop from "../ScrollToTop";
+import styles from './AllVolumes.module.css'
+import { useLocation } from "react-router-dom";
 
 const allVolumes = [
     {id:'11', title:'GYF NEWSLETTER VOLUME-11', description: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aut, culpa impedit voluptatibus suscipit quidem sunt ducimus rem molestias voluptates deserunt doloremque voluptas eaque eligendi tempora harum! Rerum odit quaerat explicabo.', coverPage: vol10CoverPage},
@@ -17,7 +20,7 @@ const allVolumes = [
   ];
   
 
-const itemsPerPage =2;
+const itemsPerPage =5;
 
 const AllVolumes = () => {
 
@@ -33,14 +36,37 @@ const AllVolumes = () => {
     // Function to handle page change
     const handlePageChange = (pageNumber) => {
       setCurrentPage(pageNumber);
+      // window.scrollTo(0,0 , {behavior:'smooth'});
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      
     };
+
+    // const {pathname} = useLocation();
   
     return (
-      <div>
-        <NewsLetterCard newsletters={currentItems}></NewsLetterCard>
-        <div>
+      <div className={styles.allVolumesContainer}>
+        {/* <div className={styles.heading}>{pathname}</div> */}
+        <div><NewsLetterCard  newsletters={currentItems} ></NewsLetterCard></div>
+        <div className={styles.buttonsSection}>
+          <button
+
+            className={styles.navigationButton}
+            onClick={() => handlePageChange(1)}
+            disabled={currentPage === 1}
+          >
+            {'<<'}
+          </button>
+          <button
+
+            className={styles.navigationButton}
+            onClick={() => handlePageChange(currentPage-1)}
+            disabled={currentPage === 1}
+          >
+            {'<'}
+          </button>
           {Array.from({ length: totalPages }, (_, index) => (
             <button
+              className={styles.navigationButton}
               key={index}
               onClick={() => handlePageChange(index + 1)}
               disabled={currentPage === index + 1}
@@ -48,6 +74,21 @@ const AllVolumes = () => {
               {index + 1}
             </button>
           ))}
+          <button
+            className={styles.navigationButton}
+            onClick={() => handlePageChange(currentPage+1)}
+            disabled={currentPage === totalPages}
+          >
+            {'>'}
+          </button>
+          <button
+
+            className={styles.navigationButton}
+            onClick={() => handlePageChange(totalPages)}
+            disabled={currentPage === totalPages}
+          >
+            {'>>'}
+          </button>
         </div>
       </div>
     );

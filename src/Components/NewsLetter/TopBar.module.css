@@ -2,6 +2,7 @@
     background-color: rgb(255, 255, 255);
     color: #6950a3;
     position:sticky;
+    z-index: 1;
     top: 0%;
     padding: 4%;
     display: flex;

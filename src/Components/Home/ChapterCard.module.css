@@ -40,11 +40,15 @@
 
 .registrationButton{
    width: 84%;
-   height: 35px;
+   /* height: 35px; */
    margin-bottom: 8%;
    font-size: 110%;
    color: #6950a3;
    background-color: white;
    border: none;
    border-radius: 5px;
+   text-decoration: none;
+   text-align: center;
+   padding: 5px 0px 5px 0px;
+   
 }

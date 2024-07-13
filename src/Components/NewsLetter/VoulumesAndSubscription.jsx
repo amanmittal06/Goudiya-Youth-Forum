@@ -10,6 +10,7 @@ const VoulmesAndSubscription = () => {
           Our monthly newsletter is your gateway to staying connected and informed about all the exciting activities and insights from the Goudiya Youth Forum.
           </p>
           <Subscription></Subscription>
+          {/* <p className={styles.aboutHeading}>Archives</p>  */}
           <AllVolumesButton></AllVolumesButton>
                     
         </div>
