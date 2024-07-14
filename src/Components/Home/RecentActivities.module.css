@@ -10,8 +10,15 @@
     margin-bottom: 5%;
     color: #6950a3;
 }
-
+.title{
+    margin: 10% 0% 4% 0%;
+    /* text-align: left; */
+    text-transform: uppercase;
+    font-weight: 400;
+    font-size: 130%;
+    text-decoration: underline 1px solid;
+}
 .description{
-    margin-top: 10%;
+    /* margin-top: 10%; */
     text-align: justify;
 }

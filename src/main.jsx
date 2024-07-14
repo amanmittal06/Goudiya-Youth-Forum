@@ -33,9 +33,8 @@ ReactDOM.createRoot(document.getElementById('root')).render(
         <Route path="/" element={<App />}>
           <Route index element={<Home />} />
           <Route path="newsletter" element={<Newsletter />} />
-          
+          <Route path="about-us" element={<About />} />
         </Route>
-        <Route path="about-us" element={<About />} />
         <Route path="/store" element={<Store />} />
         <Route path="/newsletter/archives" element={<AllVolumes/>} />
         <Route path="/register" element={<RegistrationForm />} />

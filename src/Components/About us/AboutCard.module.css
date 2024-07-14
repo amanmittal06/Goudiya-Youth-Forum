@@ -1,0 +1,18 @@
+.aboutCardContainer{
+  margin: 6%;
+}
+
+.organisationName{
+  color: #6950a3;
+  /* color: black; */
+  font-size: 180%;
+  font-weight: 300;
+  margin-bottom: 5%;
+}
+
+.organisationDescription{
+
+    text-align: justify;
+    margin-bottom: 15%;
+    
+}

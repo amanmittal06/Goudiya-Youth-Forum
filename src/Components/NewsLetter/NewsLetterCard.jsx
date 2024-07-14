@@ -11,7 +11,7 @@ const NewsLetterCard =({newsletters})=>{
               <div className={styles.title}>
                 {newsletter.title}
               </div>
-              <ReadMore>{newsletter.description}</ReadMore>
+              <ReadMore sliceSize={100}>{newsletter.description}</ReadMore>
               <button className={styles.downloadButton}>Download</button>
             </div>
 

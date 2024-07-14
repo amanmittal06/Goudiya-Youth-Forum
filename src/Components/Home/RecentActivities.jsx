@@ -17,6 +17,7 @@ const RecentActivities=()=>{
         <center className={styles.recentActivitiesContainer}>
             <div className={styles.heading}>Recent Activities</div>
             <Carousel slides={slides}></Carousel>
+            <div className={styles.title}>Jhinjholi Yatra 2024</div>
             <div className={styles.description}>Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic ratione eaque quas, nemo unde consectetur, ex laboriosam deleniti provident dolor autem distinctio suscipit sapiente libero aperiam doloremque eius, impedit consequatur?</div>
         </center>
     )

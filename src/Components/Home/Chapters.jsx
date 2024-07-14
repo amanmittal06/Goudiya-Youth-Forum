@@ -6,7 +6,7 @@ import InternationalChapter from './Images/InternationalChapter.png'
 
 const chapters = [
     {poster: DelhiChapter , title: 'GYF DELHI' , address: "Shri Raman Vihari Goudiya Math, B-3 Block, Janakpuri, New Delhi" , timming: 'Every Saturday, 4 PM - 5:30 PM'},
-    {poster: NoidaChapter, title: 'GYF NOIDA' , address: "Shri Vinod Vihari Goudiya Math, Q-29, Sector-12, Noida" , timming: 'Every Sunday, 10:30 AM - 12:00 AM'},
+    {poster: NoidaChapter, title: 'GYF NOIDA' , address: "Shri Vinod Vihari Goudiya Math, Q-29, Sector-12, Noida" , timming: 'Every Sunday, 10:30 AM - 12:00 PM'},
     {poster: InternationalChapter, title: 'GYF INTERNATIONAL' , address: null , timming: 'Every Sunday, 12 PM onwards'}
 ];
 const Chapters = () =>{
