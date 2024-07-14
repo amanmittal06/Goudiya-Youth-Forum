@@ -1,3 +1,4 @@
+import ReadMore from '../NewsLetter/ReadMore'
 import Carousel from './Carousel';
 import Image from './Images/Jhinjholi.jpg'
 import Image2 from './Images/Jhinjholi2.jpg'
@@ -17,8 +18,8 @@ const RecentActivities=()=>{
         <center className={styles.recentActivitiesContainer}>
             <div className={styles.heading}>Recent Activities</div>
             <Carousel slides={slides}></Carousel>
-            <div className={styles.title}>Jhinjholi Yatra 2024</div>
-            <div className={styles.description}>Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic ratione eaque quas, nemo unde consectetur, ex laboriosam deleniti provident dolor autem distinctio suscipit sapiente libero aperiam doloremque eius, impedit consequatur?</div>
+            <div className={styles.title}>Jhinjholi Study Tour 2024</div>
+            <div className={styles.description}><ReadMore sliceSize={450}>Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic ratione eaque quas, nemo unde consectetur, ex laboriosam deleniti provident dolor autem distinctio suscipit sapiente libero aperiam doloremque eius, impedit consequatur. Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic ratione eaque quas, nemo unde consectetur, ex laboriosam deleniti provident dolor autem distinctio suscipit sapiente libero aperiam doloremque eius, impedit consequatur?</ReadMore></div>
         </center>
     )
 

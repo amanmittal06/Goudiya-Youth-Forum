@@ -13,10 +13,10 @@
 .title{
     margin: 10% 0% 4% 0%;
     /* text-align: left; */
-    text-transform: uppercase;
+    text-transform: capitalize;
     font-weight: 400;
     font-size: 130%;
-    text-decoration: underline 1px solid;
+    /* text-decoration: underline 1px solid; */
 }
 .description{
     /* margin-top: 10%; */

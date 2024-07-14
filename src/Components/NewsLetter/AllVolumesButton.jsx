@@ -1,5 +1,7 @@
 import { Link } from 'react-router-dom'
 import styles from './AllVolumesButton.module.css'
+import { FaExternalLinkAlt } from "react-icons/fa";
+
 const AllVolumesButton =()=>{
 
     return(

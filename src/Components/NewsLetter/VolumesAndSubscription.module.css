@@ -5,12 +5,12 @@
 .aboutHeading{
   font-weight: 500;
   font-size: 160%;
-  margin: 6% 0% 4% 0%;
+  margin: 4% 0% 4% 0%;
   /* color: #6350a3; */
   
 }
 
 .text{
-  font-size: 95%;
+  font-size: 100%;
   text-align:justify;
 }

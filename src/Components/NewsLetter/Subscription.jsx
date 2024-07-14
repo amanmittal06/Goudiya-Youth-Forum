@@ -1,4 +1,5 @@
 
+import AllVolumesButton from './AllVolumesButton';
 import styles from './Subscription.module.css'
 
 const Subscription =()=>{
@@ -15,6 +16,7 @@ const Subscription =()=>{
             <input className={styles.emailInput} type="email" name="email" id="email" placeholder="Enter your email"/>
             <button className={styles.subscriptionButton} onClick={(event)=>{handleSubmit(event)}}>Subscribe</button>
           </form>
+          {/* <AllVolumesButton></AllVolumesButton> */}
         </div>
     )
 

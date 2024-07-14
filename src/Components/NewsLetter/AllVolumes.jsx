@@ -36,8 +36,8 @@ const AllVolumes = () => {
     // Function to handle page change
     const handlePageChange = (pageNumber) => {
       setCurrentPage(pageNumber);
+      // window.scrollTo(0,0);
       window.scrollTo(0,0);
-      // window.scrollTo({ top: 0, behavior: 'smooth' });
       
     };
 
