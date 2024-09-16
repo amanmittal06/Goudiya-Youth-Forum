@@ -3,6 +3,8 @@ import styles from './ProductCard.module.css'
 import { FaCartShopping } from "react-icons/fa6";
 import axios from 'axios'
 
+
+
 const ProductCard = () => {
 
     let [products, setProducts] = useState([]);
@@ -10,7 +12,7 @@ const ProductCard = () => {
 
     const loadProducts = async () =>{
       try{
-        const res =  await axios.get('/products/');
+        const res =  await axios.get('https://gyf-backend.vercel.app/products/');
         setProducts(res.data);
       }
       catch(err){

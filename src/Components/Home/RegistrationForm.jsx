@@ -28,7 +28,7 @@ const RegistrationForm = () =>{
       const addUser =  async () =>{
 
         try{
-          const user = await axios.post('/users' , userData);
+          const user = await axios.post('https://gyf-backend.vercel.app/users' , userData);
           console.log(user);
         }
         catch(err){
