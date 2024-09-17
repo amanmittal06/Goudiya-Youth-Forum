@@ -20,8 +20,8 @@ const ChapterCard = ({chapter}) =>{
             <img className={styles.poster} src={chapter.poster} alt="No img found"/>
             <div className={styles.chapterDescription}>
                 <div className={styles.chapterTitle}>{chapter.title}</div>
-                <div className={styles.address}>{chapter.address==undefined? <div><SiGooglemeet/>&nbsp;<div>Online through Google Meet</div></div> : <div><MdLocationOn></MdLocationOn>&nbsp;<div>{chapter.address}</div></div> }</div>
-                <div className={styles.timming}><MdAccessTimeFilled/> <div>{chapter.timming}</div></div>
+                <div className={styles.address}>{chapter.address==undefined? <div className={styles.location}><SiGooglemeet />&nbsp;<div>Online through Google Meet</div></div> : <div className={styles.location}><MdLocationOn className={styles.locationIcon}/>&nbsp; <div>{chapter.address}</div></div> }</div>
+                <div className={styles.timming}><MdAccessTimeFilled/>&nbsp;<div>{chapter.timming}</div></div>
             </div>
             <button className={styles.registrationButton} onClick={()=>{handleOnClick()}}>Register</button>
             {/* <Link to={{pathname:'/register' , state: selectedChapter}} className={styles.registrationButton}>Register</Link> */}

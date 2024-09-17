@@ -30,12 +30,28 @@
 
 .address{
    font-size: 92%;
-   margin: 2% 0% 2% 0%;
+   /* margin: 2% 0% 2% 0%; */
+}
+
+.location{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    /* justify-content: flex-start; */
+    
+}
+
+.locationIcon{
+    font-size: 110%;
+    min-width: fit-content;
 }
 
 .timming{
    font-size: 92%;
    margin: 2% 0% 2% 0%;
+   display: flex;
+   flex-direction: row;
+   align-items: center;
 }
 
 .registrationButton{
