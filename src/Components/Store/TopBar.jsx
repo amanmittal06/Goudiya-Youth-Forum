@@ -72,7 +72,7 @@ const TopBar = ({title}) => {
               :
               <div className={styles.loginContainer}>
                     <div>
-                    <div style={{marginBottom:'5%'}}>Kindly log in to view your orders</div>
+                    <div style={{marginBottom:'5%'}}>Kindly log in to view your orders!</div>
                     <GoogleLogin
                         onSuccess={handleLoginSuccess}
                         onError={handleLoginFailure}
