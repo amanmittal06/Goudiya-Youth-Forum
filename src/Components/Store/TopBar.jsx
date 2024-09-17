@@ -67,7 +67,7 @@ const TopBar = ({title}) => {
               {isAuthenticated===true?
               <div className={styles.menuContainer}>
                   <button className={styles.buttons}>Orders</button>
-                  <button className={styles.buttons} onClick={()=>{handleLogout}}>Log out</button>
+                  <button className={styles.buttons} onClick={()=>{handleLogout()}}>Log out</button>
               </div>
               :
               <div className={styles.loginContainer}>
