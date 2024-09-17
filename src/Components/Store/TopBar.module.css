@@ -1,0 +1,102 @@
+.header{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+}
+
+.topBar{
+    background-color: rgb(255, 255, 255);
+    color: #6950a3;
+    /* position:sticky; */
+    z-index: 1;
+    top: 0%;
+    padding: 4%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    text-align: center;
+    /* border-bottom: 1px inset rgb(220, 220, 220); */
+    box-shadow: 0px 1px 4px #6950a3;
+    /* margin-bottom: 6%; */
+    width: 100%;
+}
+
+.topBarLeft{
+    width: 70%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.topBarHeading{
+    color: #6950a3;
+    /* font-family:'Courier New', Courier, monospace; */
+    font-size:150%;
+    font-weight: 200;
+    padding: 10px;
+
+}
+
+.menuIcon{
+    font-size: 200%;
+    
+}
+
+.crossIcon{
+    font-size: 120%;
+}
+
+.menuActive{
+    width: 100%;
+    height: 100vh;
+    display: block;
+    top: 80px;
+    left: 0;
+    z-index: 20;
+    background-color: whitesmoke;
+   
+}
+
+.menuDisabled{
+    display: none;
+}
+
+.menuContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.buttons{
+    text-decoration: none;
+    font-size: 95%;
+    border: none;
+    background: none;
+    width: max-content;
+    padding: 10px 5px 10px 5px;
+    margin-bottom:2px ;
+    border-bottom: 0.5px solid #6950a3;
+    width: 90%;
+    text-align: left;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    /* text-transform: uppercase; */
+}
+
+
+.loginContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 90vh;
+    color: black;
+}
+
+.loginButton{
+    /* float: center; */
+}

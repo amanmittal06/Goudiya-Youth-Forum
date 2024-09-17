@@ -10,12 +10,13 @@ import Store from './Components/Store/Store.jsx'
 import AllVolumes from './Components/NewsLetter/AllVolumes.jsx'
 import ScrollToTop from './Components/ScrollToTop.jsx'
 import RegistrationForm from './Components/Home/RegistrationForm.jsx'
+import { GoogleOAuthProvider } from '@react-oauth/google';
 
 
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-  
+  <GoogleOAuthProvider  clientId="269312667183-gpijj1vp2m0l7im2ma7o3dp7ok2enhi0.apps.googleusercontent.com"> 
     <BrowserRouter basename=''> 
       <ScrollToTop/>
       <Routes>
@@ -29,5 +30,6 @@ ReactDOM.createRoot(document.getElementById('root')).render(
         <Route path='/register' element={<RegistrationForm />} />
       </Routes>
     </BrowserRouter>
+  </GoogleOAuthProvider>  
   </React.StrictMode>,
 )

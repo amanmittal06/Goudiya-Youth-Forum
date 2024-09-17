@@ -1,9 +1,7 @@
 import TopBar from "./TopBar"
 import LatestRealease from "./LatestRealease"
 import VoulmesAndSubscription from "./VoulumesAndSubscription"
-import { Outlet } from "react-router-dom"
 import vol10CoverPage from './Images/vol10CoverPage.jpg'
-import styles from './NewsLetter.module.css'
 import EditorialCommittee from "./EditorialCommittee"
 
 const latestNewsletter = [
@@ -15,7 +13,7 @@ const Newsletter = () =>{
    
     return(
         <>
-          <TopBar></TopBar>
+          <TopBar title={`MONTHLY NEWSLETTER`}></TopBar>
           <LatestRealease latestNewsletter={latestNewsletter}></LatestRealease>
           <VoulmesAndSubscription></VoulmesAndSubscription>
           <EditorialCommittee></EditorialCommittee>
