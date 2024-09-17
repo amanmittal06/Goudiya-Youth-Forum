@@ -34,8 +34,9 @@ const TopBar = ({title}) => {
 
     // Handle logout
     const handleLogout = () => {
+        setUser(null); 
         googleLogout(); // Logs out the user from Google
-        setUser(null);  // Clear the user state
+        // setUser(null);  // Clear the user state
     };
 
     return(
@@ -55,7 +56,6 @@ const TopBar = ({title}) => {
               </div>
               :
               <div className={styles.loginContainer}>
-                    
                     <div>
                     <div style={{marginBottom:'5%'}}>Kindly log in to view your orders</div>
                     <GoogleLogin
