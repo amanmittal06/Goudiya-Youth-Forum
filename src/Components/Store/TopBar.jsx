@@ -3,19 +3,33 @@ import styles from './TopBar.module.css'
 import gyfLogoPNG from './Images/gyfLogoPNG.png'
 import { MdOutlineMenu } from "react-icons/md";
 import { RxCross1 } from "react-icons/rx";
-import { useState } from 'react';
+import { useState , useEffect} from 'react';
 import { GoogleLogin, googleLogout } from '@react-oauth/google';
 import { jwtDecode } from 'jwt-decode';
 
 
 const TopBar = ({title}) => {
 
-    const [user, setUser] = useState(null);
-
     const [menuActive, setMenuActive] = useState(false);
     const toggleMenu = ()=>{
         setMenuActive(!menuActive);
     }
+
+    const [user, setUser] = useState(() => {
+        // Initialize state from local storage
+        const savedUser = localStorage.getItem('user');
+        return savedUser ? JSON.parse(savedUser) : null;
+    });
+    const [isAuthenticated, setIsAuthenticated] = useState(!!user);
+    
+    useEffect(() => {
+        // Save user data to local storage when it changes
+        if (user) {
+          localStorage.setItem('user', JSON.stringify(user));
+        } else {
+          localStorage.removeItem('user');
+        }
+    }, [user]);
 
     // Handle the successful login
     const handleLoginSuccess = (response) => {
@@ -25,6 +39,7 @@ const TopBar = ({title}) => {
             name: decoded.name,
             email: decoded.email,
         });
+        setIsAuthenticated(true); 
     };
 
     // Handle login failure
@@ -34,9 +49,9 @@ const TopBar = ({title}) => {
 
     // Handle logout
     const handleLogout = () => {
-        setUser(null); 
-        googleLogout(); // Logs out the user from Google
-        // setUser(null);  // Clear the user state
+        googleLogout();  // Logs out the user from Google
+        setUser(null);  // Clear user data
+        setIsAuthenticated(false);  // Mark the user as not authenticated
     };
 
     return(
@@ -49,7 +64,7 @@ const TopBar = ({title}) => {
             {menuActive==true?<RxCross1 className={styles.crossIcon} onClick={()=>{toggleMenu()}}/>:<MdOutlineMenu className={styles.menuIcon}  onClick={()=>{toggleMenu()}}/>}
           </div>
           <div className={menuActive?styles.menuActive: styles.menuDisabled}>
-              {user?
+              {isAuthenticated===true?
               <div className={styles.menuContainer}>
                   <button className={styles.buttons}>Orders</button>
                   <button className={styles.buttons} onClick={()=>{handleLogout}}>Log out</button>
