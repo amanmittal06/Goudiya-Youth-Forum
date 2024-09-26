@@ -20,7 +20,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
     domain="dev-y6rwbvo0s0fei8p3.us.auth0.com"
     clientId="hYomYOZK9E8UmTTf05iejxCpQmY88EhR"
     authorizationParams={{
-      redirect_uri: `${window.location.origin}/store`
+      redirect_uri: 'https://www.gyf.org.in/store'
     }}
   > 
     <BrowserRouter basename=''> 
