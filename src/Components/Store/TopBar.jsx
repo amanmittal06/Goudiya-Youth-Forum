@@ -11,7 +11,7 @@ import { useAuth0 } from '@auth0/auth0-react';
 const TopBar = ({title}) => {
 
     const [menuActive, setMenuActive] = useState(false);
-    const {loginWithRedirect, logout, isAuthenticated }  =useAuth0();
+    const {loginWithRedirect, logout}  =useAuth0();
     const toggleMenu = ()=>{
         setMenuActive(!menuActive);
         scrollTo({
@@ -19,12 +19,6 @@ const TopBar = ({title}) => {
         })
         
     }
-
- 
-
- 
-   
-   
 
     return(
         <div>
@@ -36,18 +30,11 @@ const TopBar = ({title}) => {
             {menuActive==true?<RxCross1 className={styles.crossIcon} onClick={()=>{toggleMenu()}}/>:<MdOutlineMenu className={styles.menuIcon}  onClick={()=>{toggleMenu()}}/>}
           </div>
           <div className={menuActive?styles.menuActive: styles.menuDisabled}>
-              {isAuthenticated===true?
+              
               <div className={styles.menuContainer}>
                   <button className={styles.buttons}>Orders</button>
                   <button className={styles.buttons}  onClick={() => logout({ logoutParams: { returnTo: window.location.origin } })}>Log out</button>
               </div>
-              :
-              <div className={styles.loginContainer}>
-                    <div>
-                    <div style={{marginBottom:'5%'}}>Kindly log in to view your orders!</div>
-                    <button onClick={() => loginWithRedirect()}>Log in</button>
-                    </div>
-              </div>}
            </div>
         </div>
     )
