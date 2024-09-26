@@ -3,7 +3,7 @@ import styles from './TopBar.module.css'
 import gyfLogoPNG from './Images/gyfLogoPNG.png'
 import { MdOutlineMenu } from "react-icons/md";
 import { RxCross1 } from "react-icons/rx";
-import { useState , useEffect} from 'react';
+import { useState} from 'react';
 import { useAuth0 } from '@auth0/auth0-react';
 
 
