@@ -4,12 +4,16 @@
     align-items: center;
     /* background-color: #6950a3; */
     width: 75%;
-    box-shadow: 5px 5px 15px gray;
+    /* box-shadow: 5px 5px 15px gray; */
     /* padding: 1px; */
-    margin: 7.5%;
+    margin: 10% 10% 20% 10%;
     /* border: 1.5px solid #6950a3; */
 }
 
+.image{
+    border: 1px solid gray;
+    border-radius: 10px;
+}
 .titleAndStock{
     width: 100%;
     display: flex;
@@ -27,14 +31,15 @@
     width: 100%;
     justify-content:space-evenly;
     width: 100%;
-    border: 1px solid #6950a3;
-    /* padding: 10px; */
+    /* border: 1px solid #6950a3; */
+    margin-top: 10px ;
     font-size: large;
 }
 
 .priceButton{
     /* background-color: #6950a3; */
     padding: 5px;
+    border: 1px solid #6950a3;
     border-radius: 5px;
     margin-right: 5px;
     color: #6950a3;
@@ -45,7 +50,7 @@
 .addToCartButton{
     background-color: #6950a3;
     padding: 5px;
-    /* border-radius: 5px; */
+    border-radius: 5px;
     margin-left:5px;
     width: 50%;
 }
@@ -67,7 +72,7 @@
 .cart{
     width: 96%;
     position: sticky;
-    bottom: 0;
+    bottom: 10px;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -77,6 +82,7 @@
     background-color: #6950a3;
     margin: 2%;
     border-radius: 10px;
+    
 }
 
 .goToCart{
@@ -93,4 +99,67 @@
 
 .noCart{
     display: none;
+}
+
+.showOrderSummary{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    /* height: 100vh; */
+    bottom: 0;
+}
+
+.noOrderSummary{
+    display: none;
+}
+
+.bottomButtons{
+   display: flex;
+   flex-direction: row;
+   align-items: center;
+   position: fixed;
+   bottom: 10px;
+   width: 100%;
+   justify-content: space-around;
+}
+
+.backButton{
+   border: 1px solid #6950a3;
+   background-color: white;
+   border-radius: 10px;
+   color: #6950a3;
+   font-size: large;
+   width: 35%;
+   height: 40px;
+   /* margin: 2%; */
+}
+
+.proceedButton{
+   border: 1px solid #6950a3;
+   background-color: #6950a3;
+   border-radius: 10px;
+   color: white;
+   font-size: large;
+   width: 60%;
+   height: 40px;
+   /* margin: 2%; */
+}
+
+.orderSummary{
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.cartItem{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    /* color: black; */
+    padding: 10px 0px 10px 0px;
+    /* border-bottom: 0.1px solid black; */
 }

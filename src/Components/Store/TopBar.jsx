@@ -13,6 +13,10 @@ const TopBar = ({title}) => {
     const [menuActive, setMenuActive] = useState(false);
     const toggleMenu = ()=>{
         setMenuActive(!menuActive);
+        scrollTo({
+        top:0
+        })
+        
     }
 
     const [user, setUser] = useState(() => {
@@ -56,7 +60,7 @@ const TopBar = ({title}) => {
 
     return(
         <div>
-          <div className={styles.topBar}>
+          <div style={{position: menuActive==true?'fixed':'relative'}} className={styles.topBar}>
             <div className={styles.topBarLeft}>
               <img src={gyfLogoPNG} alt=""  height="50px"/>
               <div className={styles.topBarHeading}>{title}</div>
