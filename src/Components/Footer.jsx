@@ -5,7 +5,6 @@ import { FaCartShopping } from "react-icons/fa6";
 
 import styles from './Footer.module.css'
 import { Link, useLocation } from "react-router-dom";
-import { useState } from "react";
 import { useAuth0 } from "@auth0/auth0-react";
 
 

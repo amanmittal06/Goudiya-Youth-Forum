@@ -113,20 +113,28 @@ const ProductCard = () => {
            <div key={product._id} className={styles.cardContainer}>
           <img className={styles.image} src= {product.image} alt="" width={'100%'}/>
            <div className={styles.titleAndStock}>
-             <div style={{ fontSize:'150%', textTransform:'capitalize' ,fontWeight:'400' ,color:'black', fontFamily:'poppins', textAlign:'left'}}>{product.title}</div>
+             <div style={{ fontSize:'150%', textTransform:'capitalize' ,fontWeight:'400' ,color:'black', fontFamily:'poppins', textAlign:'left'}}>{product.title}
+              {
+              product.sizes && (product.stock==0 || product.stock==product.quantity? <span style={{color:'red', alignSelf:'flex-start', marginTop:'-2px', fontSize:'small'}}> Out of stock</span>:<span style={{color:'green', alignSelf:'flex-start', margin:'-10px 0px 5px 5px', fontSize:'60%'}}> In stock</span>)
+              }
+             </div>
              {
-               product.stock==0 || product.stock==product.quantity? <div style={{color:'red', textAlign:'right'}}>Out of stock</div>:<div style={{color:'green', textAlign:'left'}}>In stock</div>
+              product.sizes?
+              <div style={{color:'black', textAlign:'right', fontSize:'larger'}}><span style={{fontFamily:'sans-serif'}}>₹</span>{product.price}</div>
+              :
+              product.stock==0 || product.stock==product.quantity? <div style={{color:'red', textAlign:'right'}}>Out of stock</div>:<div style={{color:'green', textAlign:'right'}}>In stock</div>
              }
+             
            </div>
            
            <div className={styles.priceAndAddtoCart}>
              {product.sizes?
-             <select className={styles.priceButton} defaultValue='null' name="" id="" onClick={(event)=>{setSelectedSize(event.target.value)}}>
+             <select className={styles.priceButton} defaultValue='null' name="" id="" onChange={(event)=>{setSelectedSize(event.target.value)}}>
               <option value="null" disabled>Select size</option>
               {product.sizes.map((size)=>( <option key={size} value={size}>{size}</option> ))}
              </select>
              :
-             <div className={styles.priceButton}>₹ {product.price}</div>
+             <div className={styles.priceButton}><span style={{fontFamily:'sans-serif'}}>₹</span> {product.price}</div>
              }
              <div className={styles.addToCartButton}>
              {
@@ -158,13 +166,13 @@ const ProductCard = () => {
           (
           cartItem.sizes? 
            Object.entries(selectedSizes).map(([size, quantity])=>(
-          <div key={size} className={styles.cartItem}> <p style={{width:'70%', textAlign:'left'}}>{cartItem.title} {size} × {quantity}</p>  <p style={{textAlign:'right', width:'10%'}}>₹{quantity*cartItem.price}</p></div>
+          <div key={size} className={styles.cartItem}> <p style={{width:'70%', textAlign:'left'}}>{cartItem.title} {size} × {quantity}</p>  <p style={{textAlign:'right', width:'10%'}}><span style={{fontFamily:'sans-serif'}}>₹</span>{quantity*cartItem.price}</p></div>
            ))
            :
-           <div key={cartItem._id} className={styles.cartItem}> <p style={{width:'70%', textAlign:'left'}}>{cartItem.title} × {cartItem.quantity}</p>  <p style={{textAlign:'right', width:'10%'}}>₹{cartItem.quantity*cartItem.price}</p></div>
+           <div key={cartItem._id} className={styles.cartItem}> <p style={{width:'70%', textAlign:'left'}}>{cartItem.title} × {cartItem.quantity}</p>  <p style={{textAlign:'right', width:'10%'}}><span style={{fontFamily:'sans-serif'}}>₹</span>{cartItem.quantity*cartItem.price}</p></div>
           )
            )}
-           <div className={styles.cartItem} style={{borderTop:'1px solid #6950a3', color:'#6950a3'}}><p style={{fontSize:'110%' }}>Total amount :</p> <p style={{fontSize:'110%' }}>₹{totalBill}</p></div>
+           <div className={styles.cartItem} style={{borderTop:'1px solid #6950a3', color:'#6950a3'}}><p style={{fontSize:'110%' }}>Total amount :</p> <p style={{fontSize:'110%' }}><span style={{fontFamily:'sans-serif'}}>₹</span>{totalBill}</p></div>
            </div>
            
            <div className={styles.bottomButtons}><button className={styles.backButton} onClick={()=>{handleShowCart()}}>Back</button><button className={styles.proceedButton}>Proceed to pay</button></div>

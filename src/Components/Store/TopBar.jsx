@@ -11,7 +11,7 @@ import { useAuth0 } from '@auth0/auth0-react';
 const TopBar = ({title}) => {
 
     const [menuActive, setMenuActive] = useState(false);
-    const {loginWithRedirect, logout}  =useAuth0();
+    const {logout}  =useAuth0();
     const toggleMenu = ()=>{
         setMenuActive(!menuActive);
         scrollTo({
