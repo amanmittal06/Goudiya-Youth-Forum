@@ -12,6 +12,9 @@ const ProductCard = () => {
     let [totalItems, setTotalItems] = useState(0);
     let [displayOrderSummary, setDisplayOrderSummary] = useState(false);
     let [totalBill, setTotalBill] = useState(undefined)
+    let [selectedSizes, setSelectedSizes] = useState({});
+    let [selectedSize, setSelectedSize] = useState('null');
+  
 
     const loadProducts = async () =>{
       try{
@@ -23,14 +26,53 @@ const ProductCard = () => {
       }
     }
 
-    function changeQuantity(ch, id){
-        const updatedProducts = products.map(product=>
-          product._id===id ? {...product, quantity: ch==='+'?product.quantity+1: product.quantity-1} : product
-        );
+    function changeQuantity(ch, id, sizes){
+        
+        if(sizes){
+          if(selectedSize==='null'){ 
+            alert('Please select the size');
+          }
+          else{
+            const updatedSelectedSizes = {...selectedSizes};
+            if(ch==='+')
+            {
+              const updatedProducts = products.map(product=>
+                product._id===id ? {...product, quantity: product.quantity+1} : product
+              );
+              setProducts(updatedProducts);
+              updatedSelectedSizes[selectedSize] = (updatedSelectedSizes[selectedSize] || 0) + 1;
+              setSelectedSizes(updatedSelectedSizes);
+              setTotalItems(totalItems+1)
+            }
+            else if(ch==='-'){
+              if (updatedSelectedSizes[selectedSize]) {
+                const updatedProducts = products.map(product=>
+                  product._id===id ? {...product, quantity: product.quantity-1} : product
+                )
+                setProducts(updatedProducts);
 
-        setProducts(updatedProducts);
-
-        ch==='+'? setTotalItems(totalItems+1):setTotalItems(totalItems-1);
+                updatedSelectedSizes[selectedSize] = updatedSelectedSizes[selectedSize] - 1;
+                if (updatedSelectedSizes[selectedSize] === 0) {
+                  delete updatedSelectedSizes[selectedSize];
+                }
+                setSelectedSizes(updatedSelectedSizes);
+                setTotalItems(totalItems - 1);
+               } 
+               else {
+                alert(`The size "${selectedSize}" is not in your cart.`);
+               }
+            }
+            console.log(updatedSelectedSizes);
+            
+          }
+        }
+        else{
+          const updatedProducts = products.map(product=>
+            product._id===id ? {...product, quantity: ch==='+'?product.quantity+1: product.quantity-1} : product
+          );
+          setProducts(updatedProducts);
+          ch==='+'? setTotalItems(totalItems+1):setTotalItems(totalItems-1);
+        } 
     }
     
     useEffect(()=>{
@@ -40,6 +82,7 @@ const ProductCard = () => {
     const handleShowCart = () =>{
       if(displayOrderSummary===false){
         createCart();
+        setSelectedSize('null');
       }
       setDisplayOrderSummary(!displayOrderSummary)
       scrollTo({
@@ -77,16 +120,23 @@ const ProductCard = () => {
            </div>
            
            <div className={styles.priceAndAddtoCart}>
+             {product.sizes?
+             <select className={styles.priceButton} defaultValue='null' name="" id="" onClick={(event)=>{setSelectedSize(event.target.value)}}>
+              <option value="null" disabled>Select size</option>
+              {product.sizes.map((size)=>( <option key={size} value={size}>{size}</option> ))}
+             </select>
+             :
              <div className={styles.priceButton}>₹ {product.price}</div>
+             }
              <div className={styles.addToCartButton}>
              {
              product.quantity===0?
-             <div  onClick={()=>{changeQuantity('+', product._id)}}>Add to cart</div>
+             <div  onClick={()=>{changeQuantity('+', product._id, product.sizes)}}>Add to cart</div>
              :
              <div className={styles.quantity}>
-               <button disabled={product.quantity==0?true:false} className={styles.quantityButton} onClick={()=>{changeQuantity('-', product._id)}}>-</button>
+               <button disabled={product.quantity==0?true:false} className={styles.quantityButton} onClick={()=>{changeQuantity('-', product._id, product.sizes)}}>-</button>
                <div>{product.quantity}</div>
-               <button disabled={product.quantity==product.stock?true:false} className={styles.quantityButton} onClick={()=>{changeQuantity('+', product._id)}}>+</button>
+               <button disabled={product.quantity==product.stock?true:false} className={styles.quantityButton} onClick={()=>{changeQuantity('+', product._id, product.sizes)}}>+</button>
              </div>
              }
              </div>
@@ -104,7 +154,16 @@ const ProductCard = () => {
        <div className={displayOrderSummary===true? styles.showOrderSummary: styles.noOrderSummary }>
            <div style={{margin: '15px',paddingTop:'10px', fontSize:'150%', fontWeight:'200', borderBottom:' 1px solid #6950a3'}}>Cart Summary</div>
            <div className={styles.orderSummary}>
-           {cart.map((cartItem)=> <div key={cartItem._id} className={styles.cartItem}> <p style={{width:'70%', textAlign:'left'}}>{cartItem.title}</p> <p>×</p> <p style={{textAlign:'right', width:'10%'}}>{cartItem.quantity}</p></div> )}
+           {cart.map((cartItem)=> 
+          (
+          cartItem.sizes? 
+           Object.entries(selectedSizes).map(([size, quantity])=>(
+          <div key={size} className={styles.cartItem}> <p style={{width:'70%', textAlign:'left'}}>{cartItem.title} {size} × {quantity}</p>  <p style={{textAlign:'right', width:'10%'}}>₹{quantity*cartItem.price}</p></div>
+           ))
+           :
+           <div key={cartItem._id} className={styles.cartItem}> <p style={{width:'70%', textAlign:'left'}}>{cartItem.title} × {cartItem.quantity}</p>  <p style={{textAlign:'right', width:'10%'}}>₹{cartItem.quantity*cartItem.price}</p></div>
+          )
+           )}
            <div className={styles.cartItem} style={{borderTop:'1px solid #6950a3', color:'#6950a3'}}><p style={{fontSize:'110%' }}>Total amount :</p> <p style={{fontSize:'110%' }}>₹{totalBill}</p></div>
            </div>
            
