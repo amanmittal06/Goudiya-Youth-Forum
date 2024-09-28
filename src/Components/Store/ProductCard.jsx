@@ -78,6 +78,8 @@ const ProductCard = () => {
           ch==='+'? setTotalItems(totalItems+1):setTotalItems(totalItems-1);
         } 
     }
+
+    
     
     useEffect(()=>{
       loadProducts();

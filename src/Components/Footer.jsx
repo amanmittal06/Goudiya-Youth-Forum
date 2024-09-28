@@ -21,22 +21,9 @@ const bottomNavBarItems = [
  
 const Footer = () => {
 
-    const {loginWithRedirect, isAuthenticated, user} = useAuth0();
+    const {loginWithRedirect, isAuthenticated} = useAuth0();
     const {pathname} = useLocation();
 
-    const postUser = async()=>{
-        try {
-            const response = await axios.post('https://gyf-backend.vercel.app/storeusers/', { email: 'aman8795' });
-            console.log('User successfully posted:', response.data);
-        } catch (error) {
-            console.error('Error posting user:', error);
-        }
-    }
-
-    useEffect( () => {
-        postUser();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [isAuthenticated]);
     
     return(       
         
