@@ -36,7 +36,7 @@ const Footer = () => {
     useEffect( () => {
         postUser();
     // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, []);
+    }, [isAuthenticated]);
     
     return(       
         
