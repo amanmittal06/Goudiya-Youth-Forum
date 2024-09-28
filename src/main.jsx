@@ -10,7 +10,7 @@ import Store from './Components/Store/Store.jsx'
 import AllVolumes from './Components/NewsLetter/AllVolumes.jsx'
 import ScrollToTop from './Components/ScrollToTop.jsx'
 import RegistrationForm from './Components/Home/RegistrationForm.jsx'
-import { Auth0Provider } from '@auth0/auth0-react';
+import { Auth0Provider } from '@auth0/auth0-react'
 
 
 
@@ -35,7 +35,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
         <Route path='/newsletter/archives' element={<AllVolumes/>} />
         <Route path='/register' element={<RegistrationForm />} />
       </Routes>
-    </BrowserRouter>
-  </Auth0Provider>  
+    </BrowserRouter>  
+    </Auth0Provider>
   </React.StrictMode>,
 )

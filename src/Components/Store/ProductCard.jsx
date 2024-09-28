@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import styles from './ProductCard.module.css'
 import { FaCartShopping } from "react-icons/fa6";
 import axios from 'axios'
+// import { useAuth0 } from '@auth0/auth0-react';
 
 
 
@@ -14,6 +15,7 @@ const ProductCard = () => {
     let [totalBill, setTotalBill] = useState(undefined)
     let [selectedSizes, setSelectedSizes] = useState({});
     let [selectedSize, setSelectedSize] = useState('null');
+    
   
 
     const loadProducts = async () =>{
@@ -102,6 +104,53 @@ const ProductCard = () => {
       setCart(cartItems);
       setTotalBill(bill);
     }
+    
+    let currOrder = {name:'Aman'};
+    const createOrder = async()=>{
+
+      const sizes = Object.entries(selectedSizes).map(([type, quantity])=>({type:type, quantity:quantity}))
+      const item = cart.map((Item)=> (Item.sizes?{title:Item.title, quantity:Item.quantity, sizes:sizes}: {title:Item.title, quantity:Item.quantity}));
+      currOrder = {...currOrder, items:item};
+      
+    }
+
+    const handleProceedToPay = async (amount) =>{
+      
+      currOrder = {...currOrder, amount:amount}
+      try{
+        const res = await axios.post('https://gyf-backend.vercel.app/payments/checkout/', currOrder);
+        const {data} = res;
+        const {order} = data;
+        console.log(data);
+        const options = {
+          key:"rzp_test_pZa22hfxIMxFrp",
+          amount: order.amount,
+          currency: "INR",
+          name: "Goudiya Youth Forum",
+          description: "Test Transaction",
+          image: "https://www.gyf.org.in/assets/gyfLogoPNG-Dkccnkw2.png",
+          order_id: order.id,
+          callback_url: "https://gyf-backend.vercel.app/payments/paymentverification",
+          notes: {
+              "address": "Razorpay Corporate Office"
+          },
+          theme: {
+              "color": "#6950a3"
+          }
+        };
+        const razor = new window.Razorpay(options);
+        razor.open();
+
+      }
+      catch(err){
+        console.log(err);
+      }
+
+    } 
+
+    
+
+    
 
     return(
        <> 
@@ -175,7 +224,7 @@ const ProductCard = () => {
            <div className={styles.cartItem} style={{borderTop:'1px solid #6950a3', color:'#6950a3'}}><p style={{fontSize:'110%' }}>Total amount :</p> <p style={{fontSize:'110%' }}><span style={{fontFamily:'sans-serif'}}>₹</span>{totalBill}</p></div>
            </div>
            
-           <div className={styles.bottomButtons}><button className={styles.backButton} onClick={()=>{handleShowCart()}}>Back</button><button className={styles.proceedButton}>Proceed to pay</button></div>
+           <div className={styles.bottomButtons}><button className={styles.backButton} onClick={()=>{handleShowCart()}}>Back</button><button className={styles.proceedButton} onClick={()=>{createOrder(); handleProceedToPay(totalBill);}}>Proceed to pay</button></div>
        </div>
        }
        </>

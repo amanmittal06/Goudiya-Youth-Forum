@@ -11,7 +11,7 @@ import { useAuth0 } from '@auth0/auth0-react';
 const TopBar = ({title}) => {
 
     const [menuActive, setMenuActive] = useState(false);
-    const {logout}  =useAuth0();
+    const {isAuthenticated, user, logout}  =useAuth0();
     const toggleMenu = ()=>{
         setMenuActive(!menuActive);
         scrollTo({
@@ -21,8 +21,8 @@ const TopBar = ({title}) => {
     }
 
     return(
-        <div>
-          <div style={{position: menuActive==true?'fixed':'relative'}} className={styles.topBar}>
+        <div className={menuActive==true? styles.topBarContainerActive: null}>
+          <div className={styles.topBar}>
             <div className={styles.topBarLeft}>
               <img src={gyfLogoPNG} alt=""  height="50px"/>
               <div className={styles.topBarHeading}>{title}</div>
@@ -34,6 +34,11 @@ const TopBar = ({title}) => {
               <div className={styles.menuContainer}>
                   <button className={styles.buttons}>Orders</button>
                   <button className={styles.buttons}  onClick={() => logout({ logoutParams: { returnTo: window.location.origin } })}>Log out</button>
+                  {isAuthenticated && <div>
+                    <button className={styles.buttons}>{user.name}</button> 
+                    <button className={styles.buttons}>{user.email}</button>
+                  </div> }
+                  {/* {!isAuthenticated && <div>not authenticated</div> } */}
               </div>
            </div>
         </div>
