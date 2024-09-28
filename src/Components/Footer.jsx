@@ -6,6 +6,7 @@ import { FaCartShopping } from "react-icons/fa6";
 import styles from './Footer.module.css'
 import { Link, useLocation } from "react-router-dom";
 import { useAuth0 } from "@auth0/auth0-react";
+import axios from "axios";
 
 
 
@@ -19,15 +20,23 @@ const bottomNavBarItems = [
  
 const Footer = () => {
 
-    const {loginWithRedirect, isAuthenticated} = useAuth0();
+    const {loginWithRedirect, isAuthenticated, user} = useAuth0();
     const {pathname} = useLocation();
+
+    const handleLogin = async () =>{
+        await loginWithRedirect();
+        if(isAuthenticated){
+           axios.post('https://gyf-backend.vercel.app/storeusers/', {email: user.email});
+        }
+        
+    }
     
     return(       
         
         <div className={styles.bottomNavBar}>
             {bottomNavBarItems.map((NavBarItem)=>(
             NavBarItem.name==='Store' && isAuthenticated===false? 
-            <div onClick={()=>{loginWithRedirect()}} key = {NavBarItem.name} className={pathname==NavBarItem.address?styles.NavBarItemActive: styles.NavBarItemInactive}>{NavBarItem.icon}{NavBarItem.name}</div>
+            <div onClick={()=>{handleLogin()}} key = {NavBarItem.name} className={pathname==NavBarItem.address?styles.NavBarItemActive: styles.NavBarItemInactive}>{NavBarItem.icon}{NavBarItem.name}</div>
             :
             <Link className={pathname==NavBarItem.address?styles.NavBarItemActive: styles.NavBarItemInactive} key={NavBarItem.name} to={`${NavBarItem.address}`}><>{NavBarItem.icon}{NavBarItem.name}</></Link>))}
         </div>
