@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import styles from './ProductCard.module.css'
 import { FaCartShopping } from "react-icons/fa6";
 import axios from 'axios'
+import { useAuth0 } from '@auth0/auth0-react';
 // import { useAuth0 } from '@auth0/auth0-react';
 
 
@@ -15,6 +16,7 @@ const ProductCard = () => {
     let [totalBill, setTotalBill] = useState(undefined)
     let [selectedSizes, setSelectedSizes] = useState({});
     let [selectedSize, setSelectedSize] = useState('null');
+    const {user} = useAuth0();
     
   
 
@@ -105,7 +107,7 @@ const ProductCard = () => {
       setTotalBill(bill);
     }
     
-    let currOrder = {name:'Aman'};
+    let currOrder = {name: user.email};
     const createOrder = async()=>{
 
       const sizes = Object.entries(selectedSizes).map(([type, quantity])=>({type:type, quantity:quantity}))
