@@ -28,7 +28,9 @@ const Footer = () => {
         if(isAuthenticated){
            axios.post('https://gyf-backend.vercel.app/storeusers/', {email: user.email});
         }
-        
+        else{
+            console.log('unauthorized');
+        }
     }
     
     return(       
