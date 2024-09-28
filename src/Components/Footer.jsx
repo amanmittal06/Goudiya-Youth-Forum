@@ -25,16 +25,18 @@ const Footer = () => {
     const {pathname} = useLocation();
 
     useEffect(() => {
-        // Post user data only when user logs in and the user object exists
-        if (isAuthenticated && user) {
-            axios.post('https://gyf-backend.vercel.app/storeusers', { email: user.email })
-                .then((response) => {
+        const postUserData = async () => {
+            if (isAuthenticated && user) {
+                try {
+                    const response = await axios.post('https://gyf-backend.vercel.app/storeusers/', { email: user.email });
                     console.log('User successfully posted:', response.data);
-                })
-                .catch((error) => {
+                } catch (error) {
                     console.error('Error posting user:', error);
-                });
-        }
+                }
+            }
+        };
+        
+        postUserData();
     }, [isAuthenticated, user]);
     
     return(       
