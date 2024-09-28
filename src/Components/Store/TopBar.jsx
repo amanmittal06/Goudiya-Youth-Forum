@@ -8,7 +8,7 @@ import { useAuth0 } from '@auth0/auth0-react';
 
 
 
-const TopBar = ({title}) => {
+const TopBar = ({title, loggedinUser}) => {
 
     const [menuActive, setMenuActive] = useState(false);
     const {logout}  =useAuth0();
@@ -33,6 +33,7 @@ const TopBar = ({title}) => {
               
               <div className={styles.menuContainer}>
                   <button className={styles.buttons}>Orders</button>
+                  {loggedinUser && loggedinUser.isAdmin && <button className={styles.buttons}>Admin</button>}
                   <button className={styles.buttons}  onClick={() => logout({ logoutParams: { returnTo: window.location.origin } })}>Log out</button>
               </div>
            </div>

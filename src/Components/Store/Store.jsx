@@ -2,16 +2,17 @@ import styles from './Store.module.css'
 import ProductCard from "./ProductCard"
 import TopBar from './TopBar'
 import axios from 'axios'
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import { useAuth0 } from '@auth0/auth0-react'
 
 
 const Store= () =>{
   const {user, isAuthenticated} = useAuth0();
+  const [loggedinUser, setLoggedinUser] = useState(undefined);
   const postUser = async()=>{
     try {
         const response = await axios.post('https://gyf-backend.vercel.app/storeusers/', { email: user.email });
-        console.log('User successfully posted:', response.data);
+        setLoggedinUser(response.data);
     } catch (error) {
         console.error('Error posting user:', error);
     }
@@ -31,7 +32,7 @@ const Store= () =>{
       {/* <div className={styles.sorry}>Sorry!!</div>  
       <div className={styles.sorryMessage}>Currently we are not selling anything online.</div>
       <Link className={styles.homeButton} to='/'>Home</Link> */}
-      <TopBar title={`GYF STORE`}></TopBar>
+      <TopBar title={`GYF STORE`} loggedinUser={loggedinUser}></TopBar>
       <ProductCard></ProductCard>
       </center>
 
