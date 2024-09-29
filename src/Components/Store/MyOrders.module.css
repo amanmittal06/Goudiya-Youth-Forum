@@ -1,0 +1,49 @@
+.container{
+
+    /* background-color: whitesmoke; */
+    min-height: 100vh;
+    
+}
+.topHeading{
+    color: #6950a3;
+    width: max-content;
+    padding: 10px 10px 2px 10px;
+    font-size: 135%;
+    font-weight: 400;
+    margin: 2%;
+    text-transform: uppercase;
+    /* border-bottom: 1px solid #6950a3; */
+}
+
+.order{
+    display: flex;
+    flex-direction: column;
+    width: auto;
+    justify-content: space-between;
+    padding: 10px;
+    margin: 5% 1% 5% 1%;
+    /* border-bottom: 2px solid gray; */
+    /* border-radius: 10px; */
+    /* background-color: whitesmoke; */
+    
+    
+}
+
+.item{
+    font-size: small;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-between;
+    padding: 2px 4px 2px 4px;
+}
+
+.priceAndStatus{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 10px 4px 0px 4px;
+    border-top: 1px solid black;
+    margin-top: 2px;
+    font-size: 90%;
+}
