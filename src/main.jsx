@@ -11,7 +11,7 @@ import AllVolumes from './Components/NewsLetter/AllVolumes.jsx'
 import ScrollToTop from './Components/ScrollToTop.jsx'
 import RegistrationForm from './Components/Home/RegistrationForm.jsx'
 import { Auth0Provider } from '@auth0/auth0-react'
-import MyOrders from './Components/Store/myOrders.jsx'
+import MyOrders from './Components/Store/MyOrders.jsx'
 
 
 
