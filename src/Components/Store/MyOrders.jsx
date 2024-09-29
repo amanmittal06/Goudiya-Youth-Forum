@@ -34,7 +34,7 @@ const MyOrders = ()=>{
         isAuthenticated===true?
         <center className={styles.container}>
             <div className={styles.topHeading}>
-                Your Orders
+               Your Orders
             </div>
             {
                orders.length===0?
@@ -81,9 +81,9 @@ const MyOrders = ()=>{
             }
         </center>
         :
-        <center>
+        <center className={styles.externalAccess}>
           <div>Login to continue</div>
-          <button onClick={()=>loginWithPopup()}>Log in</button>
+          <button onClick={()=>loginWithPopup()} className={styles.loginButton}>Log in</button>
         </center>
     )
 

@@ -1,7 +1,7 @@
 import { useAuth0 } from "@auth0/auth0-react";
 import axios from "axios";
 import { useEffect, useState } from "react"
-import styles from './MyOrders.module.css'
+import styles from './AllOrders.module.css'
 
 
 const MyOrders = ()=>{
@@ -30,6 +30,16 @@ const MyOrders = ()=>{
         }
     }
 
+    const changeDeliveryStatus = async (orderId) => {
+      try{
+         await axios.patch(`https://gyf-backend.vercel.app/orders/${orderId}`, {delivered:true});
+         loadOrders();
+      }
+      catch(err){
+          console.log('error in updating status' , err);
+      }
+    }
+
 
     useEffect(()=>{
        if(isAuthenticated && user){
@@ -42,7 +52,7 @@ const MyOrders = ()=>{
   
     return(
       //
-        (loggedinUser && loggedinUser.isAdmin===true)?  
+        isAuthenticated && loggedinUser && loggedinUser.isAdmin===true?  
         <center className={styles.container}>
             <div className={styles.topHeading}>
                 All Orders
@@ -78,9 +88,7 @@ const MyOrders = ()=>{
                                    Status: Delivered
                                 </div>
                                 :
-                                <div style={{fontWeight:'400'}}>
-                                   Status: Not delivered
-                                </div>
+                                <button className={styles.markDelivered} onClick={()=>{changeDeliveryStatus(order._id)}}>Mark delivered</button>
                             }
                              <div style={{fontWeight:'400'}}>
                               <span style={{fontFamily:'sans-serif'}}>₹</span>{order.amount}
@@ -92,21 +100,19 @@ const MyOrders = ()=>{
             }
         </center>
         :
-        <center>
+        <center className={styles.externalAccess}>
            {
             isAuthenticated===true?
-            <div>Unauthorized access</div>
+            <div>Unauthorized access!</div>
             :
             <div>
                 <div>Login to continue</div>
-                <button onClick={()=>loginWithPopup()}>Log in</button>
+                <button onClick={()=>loginWithPopup()} className={styles.loginButton}>Log in</button>
             </div>
             
            }
         </center>
     )
-
-
 
 }
 

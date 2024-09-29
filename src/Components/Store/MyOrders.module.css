@@ -47,3 +47,14 @@
     margin-top: 2px;
     font-size: 90%;
 }
+
+.loginButton{
+    background-color: #6950a3;
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
+
+.externalAccess{
+    margin-top: 10%;
+}
