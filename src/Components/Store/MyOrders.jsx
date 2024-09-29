@@ -7,7 +7,7 @@ import styles from './MyOrders.module.css'
 const MyOrders = ()=>{
 
     const [orders, setOrders] = useState([]);
-    const {isAuthenticated, user} = useAuth0();
+    const {isAuthenticated, user, loginWithRedirect} = useAuth0();
    
 
     const loadOrders = async() =>{
@@ -32,13 +32,14 @@ const MyOrders = ()=>{
   
     return(
       //  
+        isAuthenticated===true?
         <center className={styles.container}>
             <div className={styles.topHeading}>
                 Your Orders
             </div>
             {
                orders.length===0?
-               <div>No orders have been yet</div>
+               <div>No orders have been made yet</div>
                :
                orders.map((order)=>(
                   <div key={order._id} className={styles.order}>
@@ -79,6 +80,11 @@ const MyOrders = ()=>{
                   </div>
                )) 
             }
+        </center>
+        :
+        <center>
+          <div>Login to continue</div>
+          <button onClick={()=>loginWithRedirect()}>Log in</button>
         </center>
     )
 

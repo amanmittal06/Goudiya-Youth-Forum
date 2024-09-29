@@ -51,7 +51,7 @@ const MyOrders = ()=>{
             </div>
             {
                orders.length===0?
-               <div>No orders have been yet</div>
+               <div>No orders have been made yet</div>
                :
                orders.map((order)=>(
                   <div key={order._id} className={styles.order}>

@@ -12,7 +12,7 @@ import { Link } from 'react-router-dom';
 const TopBar = ({title, loggedinUser}) => {
 
     const [menuActive, setMenuActive] = useState(false);
-    const {logout, isAuthenticated, loginWithRedirect}  =useAuth0();
+    const {logout, isAuthenticated, loginWithPopup}  =useAuth0();
     const toggleMenu = ()=>{
         setMenuActive(!menuActive);
         scrollTo({
@@ -40,7 +40,7 @@ const TopBar = ({title, loggedinUser}) => {
                     isAuthenticated===true?
                     <button className={styles.buttons}  onClick={() => logout({ logoutParams: { returnTo: window.location.origin } })}>Log out</button>
                     :
-                    <button className={styles.buttons}  onClick={()=> loginWithRedirect()} >Log in</button>
+                    <button className={styles.buttons}  onClick={()=> loginWithPopup } >Log in</button>
                   }
               </div>
            </div>
