@@ -53,7 +53,7 @@ const MyOrders = ()=>{
                :
                orders.map((order)=>(
                   <div key={order._id} className={styles.order}>
-                     <div style={{textAlign:'start', fontWeight:500}}>Order id: <span style={{fontSize:'small'}}>{order._id}</span></div>
+                     <div style={{textAlign:'start', fontWeight:500}}>Id: <span style={{fontSize:'small'}}>{order.name}</span></div>
                      <div>
                         {
                             order.items.map((item)=>(
