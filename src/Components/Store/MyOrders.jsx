@@ -12,8 +12,8 @@ const MyOrders = ()=>{
 
     const loadOrders = async() =>{
      try{
-        const res = axios.get(`https://gyf-backend.vercel.app/orders/:${user.email}`)
-        setOrders(res);
+        const res = await axios.get(`https://gyf-backend.vercel.app/orders/${user.email}`)
+        setOrders(res.data);
      }
      catch(err){
         console.log(err);
@@ -25,12 +25,13 @@ const MyOrders = ()=>{
        if(isAuthenticated && user){
          loadOrders();
        }
+       loadOrders();
     // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [isAuthenticated, user]);
 
   
     return(
-        isAuthenticated && 
+      //  
         <center className={styles.container}>
             <div className={styles.topHeading}>
                 Your Orders
@@ -53,7 +54,7 @@ const MyOrders = ()=>{
                                ))
                                :
                                <div key={item._id} className={styles.item}> 
-                                  <div>{item.title}</div> <p>×</p> <div>{item.quantity}</div>
+                                  <div style={{width:'60%', textAlign:'left'}}>{item.title}</div> <p style={{width:'10%'}}>×</p> <div style={{width:'30%', textAlign:'right'}}>{item.quantity}</div>
                                </div>
                             ))
                         }

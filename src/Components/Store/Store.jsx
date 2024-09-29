@@ -30,7 +30,7 @@ const Store= () =>{
       
       <center className={styles.storeContainer}>
       {/* <div className={styles.sorry}>Sorry!!</div>  
-      <div className={styles.sorryMessage}>Currently we are not selling anything online.</div>
+      <div className={styles.sorryMessage}>Kin</div>
       <Link className={styles.homeButton} to='/'>Home</Link> */}
       <TopBar title={`GYF STORE`} loggedinUser={loggedinUser}></TopBar>
       <ProductCard></ProductCard>
