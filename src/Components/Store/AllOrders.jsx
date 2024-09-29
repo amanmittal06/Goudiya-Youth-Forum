@@ -7,7 +7,7 @@ import styles from './MyOrders.module.css'
 const MyOrders = ()=>{
 
     const [orders, setOrders] = useState([]);
-    const {isAuthenticated, user, loginWithRedirect} = useAuth0();
+    const {isAuthenticated, user, loginWithPopup} = useAuth0();
     const [loggedinUser, setLoggedinUser] = useState(undefined);
    
 
@@ -25,9 +25,6 @@ const MyOrders = ()=>{
         try {
             const response = await axios.get(`https://gyf-backend.vercel.app/storeusers/${user.email}`);
             setLoggedinUser(response.data);
-            if(loggedinUser.isAdmin===true){
-                loadOrders();
-            }
         } catch (error) {
             console.error('Error while fetching user details:', error);
         }
@@ -37,6 +34,7 @@ const MyOrders = ()=>{
     useEffect(()=>{
        if(isAuthenticated && user){
          fetchUser();
+         loadOrders();
        }
     // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [isAuthenticated, user]);
@@ -101,7 +99,7 @@ const MyOrders = ()=>{
             :
             <div>
                 <div>Login to continue</div>
-                <button onClick={()=>loginWithRedirect()}>Log in</button>
+                <button onClick={()=>loginWithPopup()}>Log in</button>
             </div>
             
            }

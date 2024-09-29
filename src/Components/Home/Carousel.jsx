@@ -1,20 +1,12 @@
+/* eslint-disable react/prop-types */
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import styles from './Carousel.module.css'; // Example CSS module for styling
-import { FaArrowLeft, FaArrowRight } from 'react-icons/fa';
 
-const PrevArrow = (props) => (
-    <div className={styles.prevArrow} onClick={props.onClick}>
-        <FaArrowLeft />
-    </div>
-);
 
-const NextArrow = (props) => (
-    <div className={styles.nextArrow} onClick={props.onClick}>
-        <FaArrowRight />
-    </div>
-);
+
+
 
 const Carousel = ({ slides }) => {
     const settings = {
@@ -26,8 +18,6 @@ const Carousel = ({ slides }) => {
         autoplay: true,
         autoplaySpeed: 3000,
         adaptiveHeight: true,
-        prevArrow: <PrevArrow />,
-        nextArrow: <NextArrow />,
     };
 
    

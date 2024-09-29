@@ -7,7 +7,7 @@ import styles from './MyOrders.module.css'
 const MyOrders = ()=>{
 
     const [orders, setOrders] = useState([]);
-    const {isAuthenticated, user, loginWithRedirect} = useAuth0();
+    const {isAuthenticated, user, loginWithPopup} = useAuth0();
    
 
     const loadOrders = async() =>{
@@ -25,7 +25,6 @@ const MyOrders = ()=>{
        if(isAuthenticated && user){
          loadOrders();
        }
-       loadOrders();
     // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [isAuthenticated, user]);
 
@@ -84,7 +83,7 @@ const MyOrders = ()=>{
         :
         <center>
           <div>Login to continue</div>
-          <button onClick={()=>loginWithRedirect()}>Log in</button>
+          <button onClick={()=>loginWithPopup()}>Log in</button>
         </center>
     )
 

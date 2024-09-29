@@ -39,7 +39,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
         <Route path='/newsletter/archives' element={<AllVolumes/>} />
         <Route path='/register' element={<RegistrationForm />} />
         <Route path='/orders' element={ <MyOrders/> } />
-        <Route path='/admin/orders' element={ <AllOrders/> } />
+        <Route path='/allorders' element={ <AllOrders/> } />
       </Routes>
     </BrowserRouter>  
     </Auth0Provider>

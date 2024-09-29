@@ -109,20 +109,18 @@ const ProductCard = () => {
       setTotalBill(bill);
     }
     
-    let name = isAuthenticated?user.email:'unauthorized';
-    let currOrder = {name: name};
+  
+    let currOrder;
     const createOrder = async()=>{
-      console.log(name);
       const sizes = Object.entries(selectedSizes).map(([type, quantity])=>({type:type, quantity:quantity}))
       const item = cart.map((Item)=> (Item.sizes?{title:Item.title, quantity:Item.quantity, sizes:sizes}: {title:Item.title, quantity:Item.quantity}));
       currOrder = {...currOrder, items:item};
-      
     }
 
     const handleProceedToPay = async (amount) =>{
       
       if(isAuthenticated){
-        currOrder = {...currOrder, amount:amount}
+        currOrder = {...currOrder, amount:amount, name:user.email}
         try{
           const res = await axios.post('https://gyf-backend.vercel.app/payments/checkout/', currOrder);
           const {data} = res;

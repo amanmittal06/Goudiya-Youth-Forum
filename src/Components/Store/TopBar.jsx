@@ -35,7 +35,7 @@ const TopBar = ({title, loggedinUser}) => {
               
               <div className={styles.menuContainer}>
                   <Link to={"/orders"} className={styles.buttons}>Orders</Link>
-                  {loggedinUser && loggedinUser.isAdmin && <Link to={"/admin/orders"} className={styles.buttons}>Admin</Link>}
+                  {loggedinUser && loggedinUser.isAdmin && <Link to={"/allorders"} className={styles.buttons}>Admin</Link>}
                   {
                     isAuthenticated===true?
                     <button className={styles.buttons}  onClick={() => logout({ logoutParams: { returnTo: window.location.origin } })}>Log out</button>
