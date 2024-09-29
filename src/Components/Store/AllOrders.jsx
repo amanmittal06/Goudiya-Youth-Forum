@@ -23,8 +23,8 @@ const MyOrders = ()=>{
 
     const fetchUser = async() =>{
         try {
-            const response = await axios.post('https://gyf-backend.vercel.app/storeusers/', { email: user.email });
-            await setLoggedinUser(response.data);
+            const response = await axios.get(`https://gyf-backend.vercel.app/storeusers/${user.email}`);
+            setLoggedinUser(response.data);
             if(loggedinUser.isAdmin===true){
                 loadOrders();
             }
@@ -97,12 +97,13 @@ const MyOrders = ()=>{
         <center>
            {
             isAuthenticated===true?
+            <div>Unauthorized access</div>
+            :
             <div>
                 <div>Login to continue</div>
                 <button onClick={()=>loginWithRedirect()}>Log in</button>
             </div>
-            :
-            <div>Unauthorized access</div>
+            
            }
         </center>
     )
