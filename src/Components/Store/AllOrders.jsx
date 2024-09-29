@@ -24,7 +24,7 @@ const MyOrders = ()=>{
     const fetchUser = async() =>{
         try {
             const response = await axios.post('https://gyf-backend.vercel.app/storeusers/', { email: user.email });
-            setLoggedinUser(response.data);
+            await setLoggedinUser(response.data);
             if(loggedinUser.isAdmin===true){
                 loadOrders();
             }
