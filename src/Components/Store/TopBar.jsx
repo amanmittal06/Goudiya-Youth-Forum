@@ -5,6 +5,7 @@ import { MdOutlineMenu } from "react-icons/md";
 import { RxCross1 } from "react-icons/rx";
 import { useState} from 'react';
 import { useAuth0 } from '@auth0/auth0-react';
+import { Link } from 'react-router-dom';
 
 
 
@@ -21,6 +22,7 @@ const TopBar = ({title, loggedinUser}) => {
     }
 
     return(
+  
         <div className={menuActive==true? styles.topBarContainerActive: null}>
           <div className={styles.topBar}>
             <div className={styles.topBarLeft}>
@@ -32,7 +34,7 @@ const TopBar = ({title, loggedinUser}) => {
           <div className={menuActive?styles.menuActive: styles.menuDisabled}>
               
               <div className={styles.menuContainer}>
-                  <button className={styles.buttons}>Orders</button>
+                  <Link to={"/orders"} className={styles.buttons}>Orders</Link>
                   {loggedinUser && loggedinUser.isAdmin && <button className={styles.buttons}>Admin</button>}
                   <button className={styles.buttons}  onClick={() => logout({ logoutParams: { returnTo: window.location.origin } })}>Log out</button>
               </div>

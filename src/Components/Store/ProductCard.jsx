@@ -144,8 +144,8 @@ const ProductCard = () => {
           }
         };
         const razor = new window.Razorpay(options);
-        const response = razor.open();
-        console.log(response);
+        razor.open();
+
       }
       catch(err){
         console.log(err);
