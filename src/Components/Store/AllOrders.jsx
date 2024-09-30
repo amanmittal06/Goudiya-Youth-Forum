@@ -9,6 +9,8 @@ const MyOrders = ()=>{
     const [orders, setOrders] = useState([]);
     const {isAuthenticated, user, loginWithPopup} = useAuth0();
     const [loggedinUser, setLoggedinUser] = useState(undefined);
+    let [userFetched, setUserFetched] = useState(false);
+    let [orderFetched, setOrderFetched] = useState(false);
    
 
     const loadOrders = async() =>{
@@ -49,6 +51,14 @@ const MyOrders = ()=>{
     // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [isAuthenticated, user]);
 
+    setTimeout(()=>{
+      setUserFetched(true);
+    },1500)
+
+    setTimeout(()=>{
+      setOrderFetched(true);
+    },2500)
+
   
     return(
       //
@@ -59,7 +69,12 @@ const MyOrders = ()=>{
             </div>
             {
                orders.length===0?
-               <div>No orders have been made yet</div>
+               (
+                  orderFetched===true?
+                  <div>No orders have been made yet</div>
+                  :
+                  <div>Please wait...</div>
+               )
                :
                orders.map((order)=>(
                   <div key={order._id} className={styles.order}>
@@ -101,16 +116,19 @@ const MyOrders = ()=>{
         </center>
         :
         <center className={styles.externalAccess}>
-           {
+            {userFetched==true?
+            (
             isAuthenticated===true?
             <div>Unauthorized access!</div>
             :
-            <div>
-                <div>Login to continue</div>
+            <div style={{marginTop:'40vh'}}>
+                <div>Your are not logged in.<br/>Please login to continue</div>
                 <button onClick={()=>loginWithPopup()} className={styles.loginButton}>Log in</button>
             </div>
-            
-           }
+            )
+            :
+            <div>Please wait...</div>
+            }
         </center>
     )
 

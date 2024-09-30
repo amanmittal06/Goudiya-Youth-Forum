@@ -8,7 +8,8 @@ const MyOrders = ()=>{
 
     const [orders, setOrders] = useState([]);
     const {isAuthenticated, user, loginWithPopup} = useAuth0();
-    let [detailsFetched, setDetailsFetched] = useState(false);
+    let [userFetched, setUserFetched] = useState(false);
+    let [orderFetched, setOrderFetched] = useState(false);
    
 
     const loadOrders = async() =>{
@@ -30,8 +31,12 @@ const MyOrders = ()=>{
     }, [isAuthenticated, user]);
 
     setTimeout(()=>{
-      setDetailsFetched(true);
-    },3000)
+      setUserFetched(true);
+    },1500)
+
+    setTimeout(()=>{
+      setOrderFetched(true);
+    },2500)
 
     return(
       //  
@@ -43,7 +48,7 @@ const MyOrders = ()=>{
             {
                orders.length===0?
                (
-                  detailsFetched===true?
+                  orderFetched===true?
                   <div>No orders have been made yet</div>
                   :
                   <div>Please wait...</div>
@@ -90,9 +95,9 @@ const MyOrders = ()=>{
             }
         </center>
         :
-         (detailsFetched===true?
-         <center className={styles.externalAccess}>
-          <div>Login to continue</div>
+         (userFetched===true?
+         <center style={{marginTop:'40vh'}} className={styles.externalAccess}>
+          <div>Your are not logged in.<br/>Please login to continue</div>
           <button onClick={()=>loginWithPopup()} className={styles.loginButton}>Log in</button>
          </center>
          :
