@@ -8,6 +8,7 @@ const MyOrders = ()=>{
 
     const [orders, setOrders] = useState([]);
     const {isAuthenticated, user, loginWithPopup} = useAuth0();
+    let [detailsFetched, setDetailsFetched] = useState(false);
    
 
     const loadOrders = async() =>{
@@ -28,7 +29,10 @@ const MyOrders = ()=>{
     // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [isAuthenticated, user]);
 
-  
+    setTimeout(()=>{
+      setDetailsFetched(true);
+    },3000)
+
     return(
       //  
         isAuthenticated===true?
@@ -38,7 +42,12 @@ const MyOrders = ()=>{
             </div>
             {
                orders.length===0?
-               <div>No orders have been made yet</div>
+               (
+                  detailsFetched===true?
+                  <div>No orders have been made yet</div>
+                  :
+                  <div>Please wait...</div>
+               )
                :
                orders.map((order)=>(
                   <div key={order._id} className={styles.order}>
@@ -81,10 +90,17 @@ const MyOrders = ()=>{
             }
         </center>
         :
-        <center className={styles.externalAccess}>
+         (detailsFetched===true?
+         <center className={styles.externalAccess}>
           <div>Login to continue</div>
           <button onClick={()=>loginWithPopup()} className={styles.loginButton}>Log in</button>
-        </center>
+         </center>
+         :
+         <center className={styles.externalAccess}>
+          <div>Please wait...</div>
+         </center>
+         )
+        
     )
 
 
