@@ -5,6 +5,18 @@ import FooterSection from "./FooterSection"
 import RecentActivities from "./RecentActivities"
 import styles from './Home.module.css'
 import { IoMdArrowDropup } from "react-icons/io";
+import Carousel from "./Carousel"
+
+import Image from './Images/Jhinjholi.jpg'
+import Image2 from './Images/Jhinjholi2.jpg'
+import Image3 from './Images/Jhinjholi3.jpg'
+
+const slides = [
+  { image: Image, title: 'Slide 1' },
+  { image: Image2, title: 'Slide 2' },
+  { image: Image3, title: 'Slide 3' }
+  // Add more slides as needed
+];
 
 const Home  = () =>{
 
@@ -19,6 +31,7 @@ const Home  = () =>{
    return(
     <>
       <Header></Header>
+      <div style= {{margin:'5%'}}><Carousel slides={slides}></Carousel></div>
       <WelcomeMsgAndIntro></WelcomeMsgAndIntro>
       <RecentActivities></RecentActivities>
       <ChaptersSection></ChaptersSection>
