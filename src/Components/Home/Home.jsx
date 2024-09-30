@@ -31,8 +31,8 @@ const Home  = () =>{
    return(
     <>
       <Header></Header>
-      <div style= {{margin:'5%'}}><Carousel slides={slides}></Carousel></div>
       <WelcomeMsgAndIntro></WelcomeMsgAndIntro>
+      <div style= {{margin:'5%'}}><Carousel slides={slides}></Carousel></div>
       <RecentActivities></RecentActivities>
       <ChaptersSection></ChaptersSection>
       <center><button className={styles.backToTop} onClick={handleOnClick}>Back To Top<IoMdArrowDropup/></button></center>
