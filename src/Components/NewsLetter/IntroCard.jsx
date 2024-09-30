@@ -12,7 +12,7 @@ const IntroCard = ({member}) => {
              <div className={styles.name}>{member.nAme}<div className={styles.designation}>{`(${member.designation})`}</div></div>
              <hr className={styles.hrTag}></hr>
              <img className={styles.image} src={member.image} alt="" width='40%' />
-             <p className={styles.description}><ReadMore sliceSize={200}>{member.description}</ReadMore></p>
+             <p className={styles.description} ><ReadMore sliceSize={200}>{member.description}</ReadMore></p>
             </div>
         </div>
     )   
