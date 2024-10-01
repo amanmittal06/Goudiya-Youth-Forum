@@ -72,6 +72,19 @@ const MyOrders = ()=>{
                                </div>
                             ))
                         }
+                        <div className={styles.item}>
+                        <div style={{width:'50%', textAlign:'left'}}>Payment Id:</div> <div style={{width:'50%', textAlign:'right'}}>
+                           {
+                              order.paymentId==undefined?
+                              'N/A'
+                              :
+                              order.paymentId
+                           }
+                        </div>
+                        </div>
+                        <div className={styles.item}>
+                        <div style={{width:'60%', textAlign:'left'}}>Payment Status:</div> <div style={{width:'40%', textAlign:'right'}}>{order.paymentStatus}</div>
+                        </div>
                         <div className={styles.priceAndStatus}>
                             
 
