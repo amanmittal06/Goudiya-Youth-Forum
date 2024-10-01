@@ -56,6 +56,13 @@
     font-size: small;
 }
 
+.editButton{
+    color: #6950a3;
+    background-color: white;
+    border: none;
+    font-size: small;
+}
+
 .inputBox{
    width: auto;
    outline: none;

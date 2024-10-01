@@ -98,8 +98,17 @@ const MyOrders = ()=>{
                         <div className={styles.payment}>
                         <div style={{width:'40%', textAlign:'left'}}>Payment Id:</div> <div style={{width:'60%', textAlign:'right'}}>
                            {
-                              order.paymentStatus==='Paid' || order.paymentStatus==='Under verification'?
+                              order.paymentStatus==='Paid'?
                               order.paymentId 
+                              :
+                              (order.paymentStatus==='Under verification'?
+                                 (order.openInputBox===true?
+                                 <div style={{width:'100%'}} className={styles.inputForm}>
+                                    <input className={styles.inputBox} onChange={(event)=>{changePaymentId(event)}} type="number" defaultValue={order.paymentId}/>
+                                    <button onClick={()=>changePaymentStatus(order._id, 'Under verification')} className={styles.submitButton}>Submit</button>
+                                 </div>
+                                 :
+                                 <div>{order.paymentId} <button onClick={()=>openInputBox(order._id)} className={styles.editButton}>Edit</button></div>) 
                               :
                               (
                                  order.paymentStatus=='Due'?
@@ -123,7 +132,7 @@ const MyOrders = ()=>{
                                     :
                                     <button onClick={()=>openInputBox(order._id)} className={styles.inputButton}>Re-enter Id</button>
                                  )
-                              )
+                              ))
                            }
                         </div>
                         </div>
