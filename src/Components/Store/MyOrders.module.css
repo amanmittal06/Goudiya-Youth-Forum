@@ -29,7 +29,7 @@
     
 }
 
-.item{
+.item, .payment{
     font-size: small;
     display: flex;
     flex-direction: row;
@@ -38,14 +38,6 @@
     padding: 2px 4px 2px 4px;
 }
 
-.payment{
-    font-size: small;
-    display: flex;
-    flex-direction: row;
-    width: 100%;
-    justify-content: space-between;
-    padding: 2px 4px 2px 4px;
-}
 
 .priceAndStatus{
     display: flex;

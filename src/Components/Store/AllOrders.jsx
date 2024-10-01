@@ -39,6 +39,18 @@ const MyOrders = ()=>{
       }
       catch(err){
           console.log('error in updating status' , err);
+          alert('Error in updating status');
+      }
+    }
+
+    const changePaymentStatus = async (orderId, status) =>{
+      try{
+        await axios.patch(`https://gyf-backend.vercel.app/orders/${orderId}`, {paymentStatus:status});
+        loadOrders();
+      }
+      catch(err){
+        console.log('error in updating status' , err);
+        alert('Error in updating status');
       }
     }
 
@@ -85,15 +97,29 @@ const MyOrders = ()=>{
                                item.sizes?
                                item.sizes.map((size)=>(
                                 <div key={size._id} className={styles.item}> 
-                                  <div style={{width:'60%', textAlign:'left'}}>{item.title} {size.type} </div> <p style={{width:'10%'}}>×</p> <div style={{width:'30%', textAlign:'right'}}>{size.quantity}</div>
+                                  <div style={{width:'70%', textAlign:'left'}}>{item.title} {size.type} </div>  <div style={{width:'30%', textAlign:'right'}}>{size.quantity}</div>
                                 </div>
                                ))
                                :
                                <div key={item._id} className={styles.item}> 
-                                  <div style={{width:'60%', textAlign:'left'}}>{item.title}</div> <p style={{width:'10%'}}>×</p> <div style={{width:'30%', textAlign:'right'}}>{item.quantity}</div>
+                                  <div style={{width:'70%', textAlign:'left'}}>{item.title}</div>  <div style={{width:'30%', textAlign:'right'}}>{item.quantity}</div>
                                </div>
                             ))
                         }
+                        <div style={{padding:'2px 0px 2px 4px', fontSize:'small', fontWeight:'400', textAlign:'left', textDecoration:'underline 1px solid black'}}>Payment details</div>
+                        <div className={styles.payment}>
+                        <div style={{width:'50%', textAlign:'left'}}>Payment Id:</div> <div style={{width:'50%', textAlign:'right'}}>
+                           {
+                              order.paymentId==undefined?
+                              'N/A'
+                              :
+                              order.paymentId
+                           }
+                        </div>
+                        </div>
+                        <div className={styles.payment}>
+                        <div style={{width:'60%', textAlign:'left'}}>Payment Status:</div> <div style={{width:'40%', textAlign:'right'}}>{order.paymentStatus}</div>
+                        </div>
                         <div className={styles.priceAndStatus}>
                             
 
@@ -104,6 +130,13 @@ const MyOrders = ()=>{
                                 </div>
                                 :
                                 <button className={styles.markDelivered} onClick={()=>{changeDeliveryStatus(order._id)}}>Mark delivered</button>
+                                 
+                            }
+                            {
+                              order.paymentStatus!=='Paid' &&
+                              <div><button className={styles.markDelivered} onClick={()=>{changePaymentStatus(order._id, 'Paid')}}>Mark paid</button>
+                              <button className={styles.markDelivered} onClick={()=>{changePaymentStatus(order._id, 'Not found')}}>Not found</button> </div> 
+
                             }
                              <div style={{fontWeight:'400'}}>
                               <span style={{fontFamily:'sans-serif'}}>₹</span>{order.amount}
