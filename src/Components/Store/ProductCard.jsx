@@ -209,7 +209,7 @@ const ProductCard = () => {
            <div className={styles.cartItem} style={{borderTop:'1px solid #6950a3', color:'#6950a3'}}><p style={{fontSize:'110%' }}>Total amount :</p> <p style={{fontSize:'110%' }}><span style={{fontFamily:'sans-serif'}}>₹</span>{totalBill}</p></div>
            </div>
            
-           <div className={styles.bottomButtons}><button className={styles.backButton} onClick={()=>{handleShowCart()}}>Back</button><button className={styles.proceedButton} onClick={()=>{createOrder(); handleProceedToPay(totalBill);}}>Proceed to pay</button></div>
+           <div className={styles.bottomButtons}><button className={styles.backButton} onClick={()=>{handleShowCart()}}>Back</button><button className={styles.proceedButton} onClick={()=>{createOrder(); handleProceedToPay(totalBill);}}>Place order</button></div>
        </div>
        }
        </>
