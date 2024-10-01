@@ -124,10 +124,11 @@ const ProductCard = () => {
         try{
           const res = await axios.post('https://gyf-backend.vercel.app/orders/', currOrder);
           console.log(res.data);
-          alert('Order Placed successfully')
+          alert('Order placed successfully!')
           window.location.reload(false);
         }
         catch(err){
+          console.log(err);
           alert('Something went wrong');
         }
       }
