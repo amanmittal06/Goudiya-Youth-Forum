@@ -1,7 +1,7 @@
 /* eslint-disable react/no-unescaped-entities */
 
 import styles from './WelcomeMsgAndIntro.module.css'
-import { RxCross2 } from "react-icons/rx";
+// import { RxCross2 } from "react-icons/rx";
 import Image1 from './Images/Home1.jpg'
 import Image2 from './Images/Home2.jpg'
 import Image3 from './Images/Home3.jpg'
@@ -25,22 +25,22 @@ const WelcomeMsgAndIntro=()=>{
         // Add more slides as needed
       ];
     
-    function handleCancelButton(){
-        const element = document.getElementsByClassName(styles.welcomeMessage)
-        for (let i = 0; i < element.length; i++) {
-            element[i].style.display = 'none';
-        }
-        const element2 = document.getElementsByClassName(styles.aboutHeading);
-        for (let i = 0; i < element2.length; i++) {
-            element2[i].style.marginTop= '3%';
-        }
-    }
+    // function handleCancelButton(){
+    //     const element = document.getElementsByClassName(styles.welcomeMessage)
+    //     for (let i = 0; i < element.length; i++) {
+    //         element[i].style.display = 'none';
+    //     }
+    //     const element2 = document.getElementsByClassName(styles.aboutHeading);
+    //     for (let i = 0; i < element2.length; i++) {
+    //         element2[i].style.marginTop= '3%';
+    //     }
+    // }
     
     return (
         <div className={styles.container}>
 
                <div className= {styles.welcomeMessage}>
-                 <div className={styles.cancelButton}><RxCross2 onClick={handleCancelButton}/></div>
+                 {/* <div className={styles.cancelButton}><RxCross2 onClick={handleCancelButton}/></div> */}
                  {/* <div className={styles.welcomeHeading}>Register now!</div>
                  <div className={styles.intro}>Step into a transformative journey with Goudiya Youth Forum, dedicated to empowering youth through the profound wisdom of ancient scriptures!</div>
                  <button className={styles.registerButton} onClick={()=>{handleOnClick()}}>Register</button> */}
