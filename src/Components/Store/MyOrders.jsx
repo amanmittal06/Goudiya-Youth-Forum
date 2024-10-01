@@ -72,8 +72,8 @@ const MyOrders = ()=>{
                                </div>
                             ))
                         }
-                        <div style={{padding:'2px 0px 2px 4px', fontSize:'small', fontWeight:'400'}}>Payment details:</div>
-                        <div className={styles.item}>
+                        <div style={{padding:'2px 0px 2px 4px', fontSize:'small', fontWeight:'400', textAlign:'left'}}>Payment details:</div>
+                        <div className={styles.payment}>
                         <div style={{width:'50%', textAlign:'left'}}>Payment Id:</div> <div style={{width:'50%', textAlign:'right'}}>
                            {
                               order.paymentId==undefined?
@@ -83,7 +83,7 @@ const MyOrders = ()=>{
                            }
                         </div>
                         </div>
-                        <div className={styles.item}>
+                        <div className={styles.payment}>
                         <div style={{width:'60%', textAlign:'left'}}>Payment Status:</div> <div style={{width:'40%', textAlign:'right'}}>{order.paymentStatus}</div>
                         </div>
                         <div className={styles.priceAndStatus}>
