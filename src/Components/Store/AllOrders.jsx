@@ -134,9 +134,8 @@ const MyOrders = ()=>{
                             }
                             {
                               order.paymentStatus!=='Paid' &&
-                              <button className={styles.markDelivered} onClick={()=>{changePaymentStatus(order._id, 'Paid')}}>Mark paid</button>
-                              &&
-                              <button className={styles.markDelivered} onClick={()=>{changePaymentStatus(order._id, 'Not found')}}>Not found</button> 
+                              <div><button className={styles.markDelivered} style={{marginRight:'2px'}} onClick={()=>{changePaymentStatus(order._id, 'Paid')}}>Mark paid</button>
+                              <button className={styles.markDelivered} onClick={()=>{changePaymentStatus(order._id, 'Not found')}}>Not found</button> </div> 
 
                             }
                              <div style={{fontWeight:'400'}}>
