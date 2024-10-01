@@ -10,10 +10,8 @@ const MyOrders = ()=>{
     const {isAuthenticated, user, loginWithPopup} = useAuth0();
     let [userFetched, setUserFetched] = useState(false);
     let [orderFetched, setOrderFetched] = useState(false);
-    let [idInput, setIdInput] = useState(false);
     let [paymentId, setPaymentId] = useState(undefined);
    
-
     const loadOrders = async() =>{
      try{
         const res = await axios.get(`https://gyf-backend.vercel.app/orders/${user.email}`)
@@ -45,6 +43,11 @@ const MyOrders = ()=>{
       setPaymentId(event.target.value);
     }
 
+    const openInputBox = (orderId) =>{
+      const updatedOrders = orders.map((order)=> order._id==orderId? {...order, openInputBox:true} : order);
+      setOrders(updatedOrders);
+    }
+
     const changePaymentStatus= async(orderId ,status) =>{
       try{
          await axios.patch(`https://gyf-backend.vercel.app/orders/${orderId}`, {paymentId: paymentId ,paymentStatus:status});
@@ -54,6 +57,7 @@ const MyOrders = ()=>{
          console.log('error in updating status' , err);
          alert('Error in updating status');
        }
+
     }
 
     return(
@@ -95,29 +99,29 @@ const MyOrders = ()=>{
                         <div style={{width:'50%', textAlign:'left'}}>Payment Id:</div> <div style={{width:'50%', textAlign:'right'}}>
                            {
                               order.paymentStatus==='Paid' || order.paymentStatus==='Under verification'?
-                              order.paymentId
+                              order.paymentId 
                               :
                               (
                                  order.paymentStatus=='Due'?
                                  (
-                                    idInput===true?
+                                    order.openInputBox===true?
                                     <div>
                                        <input onChange={(event)=>{changePaymentId(event)}} type="number" />
                                        <button onClick={()=>changePaymentStatus(order._id, 'Under verification')}>Submit</button>
                                     </div>
                                     :
-                                    <button onClick={()=>setIdInput(true)}>Enter Id</button>
+                                    <button onClick={()=>openInputBox(order._id)}>Enter Id</button>
                                  )
                                  :
                                  order.paymentStatus=='Not found' &&
                                  (
-                                    idInput===true?
+                                    order.openInputBox===true?
                                     <div>
                                        <input onChange={(event)=>{changePaymentId(event)}} type="number" />
                                        <button onClick={()=>changePaymentStatus(order._id ,'Under verification')}>Submit</button>
                                     </div>
                                     :
-                                    <button onClick={()=>setIdInput(true)}>Re-enter Id</button>
+                                    <button onClick={()=>openInputBox(order._id)}>Re-enter Id</button>
                                  )
                               )
                            }
