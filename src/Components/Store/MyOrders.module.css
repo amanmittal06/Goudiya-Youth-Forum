@@ -58,10 +58,11 @@
 
 .inputBox{
    width: auto;
+   outline: none;
 }
 
 .inputBox:focus{
-    border: 0.5px solid #6950a3;
+    outline: 0.5px solid #6950a3;
 }
 
 .submitButton{
