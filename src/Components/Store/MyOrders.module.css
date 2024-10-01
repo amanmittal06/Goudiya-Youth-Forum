@@ -40,11 +40,13 @@
 
 .inputForm{
     display: flex;
-    flex-direction: row;
-    align-items: center;
+    flex-direction: column;
+    align-items: flex-end;
     justify-content: space-evenly;
     width: 100%;
 }
+
+
 
 .inputButton{
     color: #6950a3;
@@ -54,12 +56,21 @@
     font-size: small;
 }
 
+.inputBox{
+   width: auto;
+}
+
+.inputBox:focus{
+    border: 0.5px solid #6950a3;
+}
+
 .submitButton{
     color:white;
     background-color: #6950a3;
     border: 0.5px solid white;
     border-radius: 5px;
     font-size: small;
+    margin-top: 2px;
 }
 
 .priceAndStatus{
