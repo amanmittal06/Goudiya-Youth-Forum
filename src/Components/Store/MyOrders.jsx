@@ -108,7 +108,7 @@ const MyOrders = ()=>{
                                     <button onClick={()=>changePaymentStatus(order._id, 'Under verification')} className={styles.submitButton}>Submit</button>
                                  </div>
                                  :
-                                 <div>{order.paymentId} <p onClick={()=>openInputBox(order._id)} className={styles.editButton}>Edit</p></div>) 
+                                 <div>{order.paymentId} <span onClick={()=>openInputBox(order._id)} className={styles.editButton}>Edit</span></div>) 
                               :
                               (
                                  order.paymentStatus=='Due'?
