@@ -96,7 +96,7 @@ const MyOrders = ()=>{
                         }
                         <div style={{padding:'2px 0px 2px 4px', fontSize:'small', fontWeight:'400', textAlign:'left', textDecoration:'underline 1px solid black'}}>Payment details</div>
                         <div className={styles.payment}>
-                        <div style={{width:'50%', textAlign:'left'}}>Payment Id:</div> <div style={{width:'50%', textAlign:'right'}}>
+                        <div style={{width:'40%', textAlign:'left'}}>Payment Id:</div> <div style={{width:'60%', textAlign:'right'}}>
                            {
                               order.paymentStatus==='Paid' || order.paymentStatus==='Under verification'?
                               order.paymentId 
@@ -105,23 +105,23 @@ const MyOrders = ()=>{
                                  order.paymentStatus=='Due'?
                                  (
                                     order.openInputBox===true?
-                                    <div>
+                                    <div style={{width:'100%'}} className={styles.inputForm}>
                                        <input onChange={(event)=>{changePaymentId(event)}} type="number" />
-                                       <button onClick={()=>changePaymentStatus(order._id, 'Under verification')}>Submit</button>
+                                       <button onClick={()=>changePaymentStatus(order._id, 'Under verification')} className={styles.submitButton}>Submit</button>
                                     </div>
                                     :
-                                    <button onClick={()=>openInputBox(order._id)}>Enter Id</button>
+                                    <button onClick={()=>openInputBox(order._id)} className={styles.inputButton}>Enter Id</button>
                                  )
                                  :
                                  order.paymentStatus=='Not found' &&
                                  (
                                     order.openInputBox===true?
-                                    <div>
+                                    <div style={{width:'100%'}} className={styles.inputForm}>
                                        <input onChange={(event)=>{changePaymentId(event)}} type="number" />
-                                       <button onClick={()=>changePaymentStatus(order._id ,'Under verification')}>Submit</button>
+                                       <button onClick={()=>changePaymentStatus(order._id ,'Under verification')} className={styles.submitButton}>Submit</button>
                                     </div>
                                     :
-                                    <button onClick={()=>openInputBox(order._id)}>Re-enter Id</button>
+                                    <button onClick={()=>openInputBox(order._id)} className={styles.inputButton}>Re-enter Id</button>
                                  )
                               )
                            }

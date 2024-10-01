@@ -38,6 +38,29 @@
     padding: 2px 4px 2px 4px;
 }
 
+.inputForm{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 100%;
+}
+
+.inputButton{
+    color: #6950a3;
+    background-color: white;
+    border: 0.5px solid #6950a3;
+    border-radius: 5px;
+    font-size: small;
+}
+
+.submitButton{
+    color:white;
+    background-color: #6950a3;
+    border: 0.5px solid white;
+    border-radius: 5px;
+    font-size: small;
+}
 
 .priceAndStatus{
     display: flex;
