@@ -63,16 +63,16 @@ const MyOrders = ()=>{
                                item.sizes?
                                item.sizes.map((size)=>(
                                 <div key={size._id} className={styles.item}> 
-                                  <div style={{width:'60%', textAlign:'left'}}>{item.title} {size.type} </div> <p style={{width:'10%'}}>×</p> <div style={{width:'30%', textAlign:'right'}}>{size.quantity}</div>
+                                  <div style={{width:'70%', textAlign:'left'}}>{item.title} {size.type} </div>  <div style={{width:'30%', textAlign:'right'}}>{size.quantity}</div>
                                 </div>
                                ))
                                :
                                <div key={item._id} className={styles.item}> 
-                                  <div style={{width:'60%', textAlign:'left'}}>{item.title}</div> <p style={{width:'10%'}}>×</p> <div style={{width:'30%', textAlign:'right'}}>{item.quantity}</div>
+                                  <div style={{width:'70%', textAlign:'left'}}>{item.title}</div>  <div style={{width:'30%', textAlign:'right'}}>{item.quantity}</div>
                                </div>
                             ))
                         }
-                        <div style={{padding:'2px 0px 2px 4px', fontSize:'small', fontWeight:'400', textAlign:'left'}}>Payment details:</div>
+                        <div style={{padding:'2px 0px 2px 4px', fontSize:'small', fontWeight:'400', textAlign:'left', textDecoration:'underline 0.5px solid black'}}>Payment details</div>
                         <div className={styles.payment}>
                         <div style={{width:'50%', textAlign:'left'}}>Payment Id:</div> <div style={{width:'50%', textAlign:'right'}}>
                            {
