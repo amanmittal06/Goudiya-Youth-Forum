@@ -39,13 +39,13 @@ const WelcomeMsgAndIntro=()=>{
     return (
         <div className={styles.container}>
 
-               <div className= {styles.welcomeMessage}>
-                 {/* <div className={styles.cancelButton}><RxCross2 onClick={handleCancelButton}/></div> */}
-                 {/* <div className={styles.welcomeHeading}>Register now!</div>
+               {/* <div className= {styles.welcomeMessage}>
+                 <div className={styles.cancelButton}><RxCross2 onClick={handleCancelButton}/></div>
+                 <div className={styles.welcomeHeading}>Register now!</div>
                  <div className={styles.intro}>Step into a transformative journey with Goudiya Youth Forum, dedicated to empowering youth through the profound wisdom of ancient scriptures!</div>
-                 <button className={styles.registerButton} onClick={()=>{handleOnClick()}}>Register</button> */}
-                 {/* <Link to='/register' className={styles.registerButton}>Register</Link> */}
-               </div>
+                 <button className={styles.registerButton} onClick={()=>{handleOnClick()}}>Register</button>
+                 <Link to='/register' className={styles.registerButton}>Register</Link>
+               </div> */}
                {/* <RecentActivities></RecentActivities> */}
                <div style= {{margin:'10% 0% 10% 0%'}}><Carousel slides={slides}></Carousel></div>
                <div className={styles.aboutHeading}>About Goudiya Youth Forum</div>
