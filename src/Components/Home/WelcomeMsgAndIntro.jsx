@@ -1,7 +1,6 @@
 /* eslint-disable react/no-unescaped-entities */
 
 import styles from './WelcomeMsgAndIntro.module.css'
-import { useNavigate } from 'react-router-dom'
 import { RxCross2 } from "react-icons/rx";
 import Image1 from './Images/Home1.jpg'
 import Image2 from './Images/Home2.jpg'
@@ -36,21 +35,15 @@ const WelcomeMsgAndIntro=()=>{
             element2[i].style.marginTop= '3%';
         }
     }
-
-    const navigate = useNavigate();
-
-    function handleOnClick(){
-        navigate('/register' , {state: {chapterValue:undefined}});
-    }
     
     return (
         <div className={styles.container}>
 
                <div className= {styles.welcomeMessage}>
                  <div className={styles.cancelButton}><RxCross2 onClick={handleCancelButton}/></div>
-                 <div className={styles.welcomeHeading}>Register now!</div>
+                 {/* <div className={styles.welcomeHeading}>Register now!</div>
                  <div className={styles.intro}>Step into a transformative journey with Goudiya Youth Forum, dedicated to empowering youth through the profound wisdom of ancient scriptures!</div>
-                 <button className={styles.registerButton} onClick={()=>{handleOnClick()}}>Register</button>
+                 <button className={styles.registerButton} onClick={()=>{handleOnClick()}}>Register</button> */}
                  {/* <Link to='/register' className={styles.registerButton}>Register</Link> */}
                </div>
                {/* <RecentActivities></RecentActivities> */}

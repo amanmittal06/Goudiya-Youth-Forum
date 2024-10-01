@@ -32,11 +32,11 @@ const MyOrders = ()=>{
 
     setTimeout(()=>{
       setUserFetched(true);
-    },1500)
+    },2500)
 
     setTimeout(()=>{
       setOrderFetched(true);
-    },2500)
+    },3500)
 
     return(
       //  

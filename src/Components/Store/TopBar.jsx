@@ -21,6 +21,8 @@ const TopBar = ({title, loggedinUser}) => {
         
     }
 
+
+    
     return(
   
         <div className={menuActive==true? styles.topBarContainerActive: null}>
@@ -41,6 +43,7 @@ const TopBar = ({title, loggedinUser}) => {
                     <button className={styles.buttons}  onClick={() => logout({ logoutParams: { returnTo: window.location.origin } })}>Log out</button>
                     :
                     <button className={styles.buttons}  onClick={()=> {loginWithPopup(); toggleMenu();} } >Log in</button>
+                    
                   }
               </div>
            </div>

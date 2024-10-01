@@ -122,32 +122,12 @@ const ProductCard = () => {
       if(isAuthenticated){
         currOrder = {...currOrder, amount:amount, name:user.email}
         try{
-          const res = await axios.post('https://gyf-backend.vercel.app/payments/checkout/', currOrder);
-          const {data} = res;
-          const {order} = data;
-          console.log(data);
-          const options = {
-            key:"rzp_test_pZa22hfxIMxFrp",
-            amount: order.amount,
-            currency: "INR",
-            name: "Goudiya Youth Forum",
-            description: "Test Transaction",
-            image: "https://www.gyf.org.in/assets/gyfLogoPNG-Dkccnkw2.png",
-            order_id: order.id,
-            callback_url: "https://gyf-backend.vercel.app/payments/paymentverification",
-            notes: {
-                "address": "Razorpay Corporate Office"
-            },
-            theme: {
-                "color": "#6950a3"
-            }
-          };
-          const razor = new window.Razorpay(options);
-          razor.open();
-  
+          const res = await axios.post('https://gyf-backend.vercel.app/orders/', currOrder);
+          console.log(res.data);
+          alert('Order Placed successfully')
         }
         catch(err){
-          console.log(err);
+          alert('Something went wrong');
         }
       }
       else{
@@ -155,11 +135,7 @@ const ProductCard = () => {
       }
     } 
 
-    
-
-    
-
-    return(
+     return(
        <> 
        {
         displayOrderSummary===false
