@@ -113,7 +113,7 @@ const MyOrders = ()=>{
                                  (
                                     idInput===true?
                                     <div>
-                                       <input type="number" />
+                                       <input onChange={(event)=>{changePaymentId(event)}} type="number" />
                                        <button onClick={()=>changePaymentStatus(order._id ,'Under verification')}>Submit</button>
                                     </div>
                                     :
