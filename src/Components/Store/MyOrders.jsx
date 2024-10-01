@@ -72,7 +72,7 @@ const MyOrders = ()=>{
                                </div>
                             ))
                         }
-                        <div style={{padding:'2px 0px 2px 4px', fontSize:'small', fontWeight:'400', textAlign:'left', textDecoration:'underline 0.5px solid black'}}>Payment details</div>
+                        <div style={{padding:'2px 0px 2px 4px', fontSize:'small', fontWeight:'400', textAlign:'left', textDecoration:'underline 1px solid black'}}>Payment details</div>
                         <div className={styles.payment}>
                         <div style={{width:'50%', textAlign:'left'}}>Payment Id:</div> <div style={{width:'50%', textAlign:'right'}}>
                            {
