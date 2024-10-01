@@ -1,6 +1,7 @@
 import styles from './NewsLetterCard.module.css'
 import ReadMore from './ReadMore';
 
+
 const NewsLetterCard =({newsletters})=>{ 
 
     return(
@@ -11,8 +12,8 @@ const NewsLetterCard =({newsletters})=>{
               <div className={styles.title}>
                 {newsletter.title}
               </div>
-              <ReadMore sliceSize={100}>{newsletter.description}</ReadMore>
-              <button className={styles.downloadButton}>Download</button>
+              {newsletter.description && <ReadMore sliceSize={100}>{newsletter.description}</ReadMore>}
+              <a href={newsletter.downloadLink} className={styles.downloadButton}>Download</a>
             </div>
 
         ))
