@@ -126,7 +126,7 @@ const MyOrders = ()=>{
                                  (
                                     order.openInputBox===true?
                                     <div style={{width:'100%'}} className={styles.inputForm}>
-                                       <input className={styles.inputBox} onChange={(event)=>{changePaymentId(event)}} type="number" />
+                                       <input className={styles.inputBox} onChange={(event)=>{changePaymentId(event)}} type="number" defaultValue={order.paymentId}/>
                                        <button onClick={()=>changePaymentStatus(order._id ,'Under verification')} className={styles.submitButton}>Submit</button>
                                     </div>
                                     :
