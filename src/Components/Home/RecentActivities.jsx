@@ -19,7 +19,7 @@ const RecentActivities=()=>{
             <div className={styles.heading}>Recent Activities</div>
             <Carousel slides={slides}></Carousel>
             <div className={styles.title}>Jhinjholi Study Tour 2024</div>
-            <div className={styles.description}><ReadMore sliceSize={450}>Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic ratione eaque quas, nemo unde consectetur, ex laboriosam deleniti provident dolor autem distinctio suscipit sapiente libero aperiam doloremque eius, impedit consequatur. Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic ratione eaque quas, nemo unde consectetur, ex laboriosam deleniti provident dolor autem distinctio suscipit sapiente libero aperiam doloremque eius, impedit consequatur?</ReadMore></div>
+            <div className={styles.description}><ReadMore sliceSize={450}>{`The Jhiljholi Study Tour is a dedicated spiritual retreat focused on deepening participant's understanding of core Vaishnava scriptures such as Shrimad Bhagvatam, Shrii Updeshamrita Grantha by Shrila Rupa Goswami, Bhagavad Gita, and Jaiva Dharma. Guided by the senior devotee Shrila B.V. Padmanabh Maharaj, this program emphasizes sincere study and practical application of daily devotional services as performed in the traditional Matha. It is designed to foster personal spiritual growth while cultivating a sense of community, encouraging participants to move from an individualistic mindset toward a collective goal. By practicing humility, teamwork, and devotion in a structured environment, the retreat helps devotees internalize the teachings of sacred texts and live a life aligned with Vaishnava principles.`}</ReadMore></div>
         </center>
     )
 
