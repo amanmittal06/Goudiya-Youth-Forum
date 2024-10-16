@@ -20,14 +20,14 @@ const Home  = () =>{
 
    }
    return(
-    <>
+    <div style={{overflow:'hidden'}}>
       <Header></Header>
       <WelcomeMsgAndIntro></WelcomeMsgAndIntro>
       <RecentActivities></RecentActivities>
       <ChaptersSection></ChaptersSection>
       <center><button className={styles.backToTop} onClick={handleOnClick}>Back To Top<IoMdArrowDropup/></button></center>
       <FooterSection></FooterSection>
-    </>
+    </div>
    )
 }
 
