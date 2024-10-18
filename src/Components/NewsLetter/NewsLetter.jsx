@@ -1,12 +1,12 @@
 import TopBar from "./TopBar"
 import LatestRealease from "./LatestRealease"
 import VoulmesAndSubscription from "./VoulumesAndSubscription"
-import vol13CoverPage from './Images/CoverImageVol13.jpg'
-import Vol13 from './assets/Newsletter13.pdf'
+import LatestReleaseCover from './Images/LatestRelease.jpg'
+import LatestRelease from './assets/LatestRelease.pdf'
 import EditorialCommittee from "./EditorialCommittee"
 
 const latestNewsletter = [
-  {id:'1', title:'GYF NEWSLETTER VOLUME-13', description: undefined, coverPage: vol13CoverPage, downloadLink: Vol13}
+  {id:'1', title:'GYF NEWSLETTER VOLUME-14', description: undefined, coverPage: LatestReleaseCover, downloadLink: LatestRelease}
 ];
 
 
