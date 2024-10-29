@@ -3,12 +3,16 @@ import Carousel from './Carousel';
 import Image from './Images/Jhinjholi.jpg'
 import Image2 from './Images/Jhinjholi2.jpg'
 import Image3 from './Images/Jhinjholi3.jpg'
+import Image4 from './Images/Jhinjholi4.jpg'
+import Image5 from './Images/Jhinjholi5.jpg'
 import styles from './RecentActivities.module.css'
 
 const slides = [
   { image: Image, title: 'Slide 1' },
   { image: Image2, title: 'Slide 2' },
-  { image: Image3, title: 'Slide 3' }
+  { image: Image3, title: 'Slide 3' },
+  { image: Image4, title: 'Slide 4' },
+  { image: Image5, title: 'Slide 5' }
   // Add more slides as needed
 ];
 

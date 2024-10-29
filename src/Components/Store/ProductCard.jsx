@@ -145,7 +145,7 @@ const ProductCard = () => {
         <div>
           { products.map((product)=>(
            <div key={product._id} className={styles.cardContainer}>
-          <img className={styles.image} src= {product.image} alt="" width={'100%'}/>
+          <img className={styles.image} src= {product.image} alt="Loading" width={'100%'}/>
            <div className={styles.titleAndStock}>
              <div style={{ fontSize:'150%', textTransform:'capitalize' ,fontWeight:'400' ,color:'black', fontFamily:'poppins', textAlign:'left'}}>{product.title}
               {
