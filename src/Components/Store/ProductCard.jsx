@@ -173,7 +173,7 @@ const ProductCard = () => {
              <div className={styles.addToCartButton}>
              {
              product.quantity===0?
-             <div  onClick={()=>{changeQuantity('+', product._id, product.sizes)}}>Add to cart</div>
+             <div  onClick={()=>{product.stock===0?alert('Product is out of stock!'):changeQuantity('+', product._id, product.sizes)}}>Add to cart</div>
              :
              <div className={styles.quantity}>
                <button disabled={product.quantity==0?true:false} className={styles.quantityButton} onClick={()=>{changeQuantity('-', product._id, product.sizes)}}>-</button>
