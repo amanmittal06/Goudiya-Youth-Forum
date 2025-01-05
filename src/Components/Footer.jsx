@@ -2,6 +2,7 @@ import { AiFillHome } from "react-icons/ai";
 import { IoNewspaper } from "react-icons/io5";
 import { IoIosPeople } from "react-icons/io";
 import { FaCartShopping } from "react-icons/fa6";
+import { MdAdminPanelSettings } from "react-icons/md";
 
 import styles from './Footer.module.css'
 import { Link, useLocation } from "react-router-dom";
@@ -16,6 +17,7 @@ const bottomNavBarItems = [
     {name:'Newsletter' , address:"/newsletter" , icon: <IoNewspaper/>},
     {name:'Store' , address:"/store" , icon: <FaCartShopping/>},
     {name:'About us' , address:"/about-us" , icon: <IoIosPeople/>},
+    {name:'Admin', address:"#", icon: <MdAdminPanelSettings/>}
 ];
 
  
