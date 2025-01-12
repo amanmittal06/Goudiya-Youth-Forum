@@ -11,10 +11,12 @@ import { useEffect, useState } from "react"
 const Newsletter = () =>{
 
     let [latestNewsletter, setLatestNewsletter] = useState([]);
+    let [response, setResponse] = useState([]);
 
     const fetchNewsletter = async() =>{
      try {
-        const response = await axios.get(`https://gyf-backend.vercel.app/newsletters/latest`);
+        const res = await axios.get(`https://gyf-backend.vercel.app/newsletters/latest`);
+        setResponse(res);
         let newsletter = [
           {id:response._id, title:`GYF NEWSLETTER VOLUME-${response.volume}`, description: response.description, coverPage: response.coverImage, downloadLink: response.address}
         ];
