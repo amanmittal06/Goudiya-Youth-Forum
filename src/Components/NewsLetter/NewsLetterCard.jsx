@@ -9,7 +9,7 @@ const NewsLetterCard =({newsletters})=>{
         newsletters.map((newsletter)=>(
 
             <div key="" className={styles.cardContainer}>
-              <img className={styles.coverPage} src={newsletter.coverPage} alt="No img found"/>
+              <img className={styles.coverPage} src={newsletter.coverPage} alt="Loading..."/>
               <div className={styles.title}>
                 {newsletter.title}
               </div>
