@@ -6,7 +6,7 @@ import EditorialCommittee from "./EditorialCommittee"
 import { useEffect, useState } from "react"
 
 const latestNewsletter = [
-  {id:'1', title:'GYF NEWSLETTER VOLUME-16', description: undefined, coverPage: './src/Components/NewsLetter/Images/CoverImageVol16.png', downloadLink: './src/Components/NewsLetter/assets/News Letter Vol - 16.pdf'}
+  {id:'1', title:'GYF NEWSLETTER VOLUME-16', description: undefined, coverPage: '/newsletters/CoverImages/CoverImageVol16.png', downloadLink: '/newsletters/volume16.pdf'}
 ];
 
 
