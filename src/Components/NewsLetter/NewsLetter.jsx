@@ -5,9 +5,6 @@ import VoulmesAndSubscription from "./VoulumesAndSubscription"
 import EditorialCommittee from "./EditorialCommittee"
 import { useEffect, useState } from "react"
 
-const latestNewsletter = [
-  {id:'1', title:'GYF NEWSLETTER VOLUME-16', description: undefined, coverPage: '/newsletters/CoverImages/CoverImageVol16.png', downloadLink: '/newsletters/volume16.pdf'}
-];
 
 
 
@@ -27,6 +24,10 @@ const Newsletter = () =>{
     useEffect(()=>{
       fetchNewsletter();
     }, [])
+
+    const latestNewsletter = [
+      {id:'1', title:`GYF NEWSLETTER VOLUME-${newsletter.volume}`, description: newsletter.description, coverPage: newsletter.coverImage, downloadLink: newsletter.address}
+    ];
   
    
     return(
