@@ -10,12 +10,15 @@ import { useEffect, useState } from "react"
 
 const Newsletter = () =>{
 
-    let [newsletter, setNewsletter] = useState([]);
+    let [latestNewsletter, setLatestNewsletter] = useState([]);
 
     const fetchNewsletter = async() =>{
      try {
         const response = await axios.get(`https://gyf-backend.vercel.app/newsletters/latest`);
-        setNewsletter(response.data);
+        let newsletter = [
+          {id:response.id, title:`GYF NEWSLETTER VOLUME-${response.volume}`, description: response.description, coverPage: response.coverImage, downloadLink: response.address}
+        ];
+        setLatestNewsletter(newsletter)
      } catch (error) {
         console.error('Error while fetching user details:', error);
      }
@@ -25,9 +28,7 @@ const Newsletter = () =>{
       fetchNewsletter();
     }, [])
 
-    const latestNewsletter = [
-      {id:'1', title:`GYF NEWSLETTER VOLUME-${newsletter.volume}`, description: newsletter.description, coverPage: newsletter.coverImage, downloadLink: newsletter.address}
-    ];
+   
   
    
     return(
