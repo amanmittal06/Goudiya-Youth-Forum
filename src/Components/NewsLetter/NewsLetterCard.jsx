@@ -2,6 +2,7 @@ import styles from './NewsLetterCard.module.css'
 import ReadMore from './ReadMore';
 
 
+
 const NewsLetterCard =({newsletters})=>{ 
 
     return(

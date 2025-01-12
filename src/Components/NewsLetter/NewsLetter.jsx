@@ -1,16 +1,33 @@
+import axios from "axios"
 import TopBar from "./TopBar"
 import LatestRealease from "./LatestRealease"
 import VoulmesAndSubscription from "./VoulumesAndSubscription"
-import CoverImageVol16 from './Images/CoverImageVol16.png'
-import volume16 from './assets/News Letter Vol - 16.pdf'
 import EditorialCommittee from "./EditorialCommittee"
+import { useEffect, useState } from "react"
 
 const latestNewsletter = [
-  {id:'1', title:'GYF NEWSLETTER VOLUME-16', description: undefined, coverPage: CoverImageVol16, downloadLink: volume16}
+  {id:'1', title:'GYF NEWSLETTER VOLUME-16', description: undefined, coverPage: './Images/CoverImageVol16.png', downloadLink: './assets/News Letter Vol - 16.pdf'}
 ];
 
 
+
 const Newsletter = () =>{
+
+    let [newsletter, setNewsletter] = useState([]);
+
+    const fetchNewsletter = async() =>{
+     try {
+        const response = await axios.get(`https://gyf-backend.vercel.app/newsletters/latest`);
+        setNewsletter(response.data);
+     } catch (error) {
+        console.error('Error while fetching user details:', error);
+     }
+    }
+
+    useEffect(()=>{
+      fetchNewsletter();
+    }, [])
+  
    
     return(
         <>
