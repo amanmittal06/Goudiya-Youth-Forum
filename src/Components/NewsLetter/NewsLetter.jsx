@@ -29,7 +29,7 @@ const Newsletter = () =>{
 
     useEffect(()=>{
       setLatestNewsletter([
-        {id:response._id, title: response.volume!=undefined?`GYF NEWSLETTER VOLUME-${response.volume}`:'', description: response.description, coverPage: response.coverImage, downloadLink: response.address}
+        {id:response._id, title:`GYF NEWSLETTER VOLUME-${response.volume}`, description: response.description, coverPage: response.coverImage, downloadLink: response.address}
       ])
     }, [response])
 
@@ -37,7 +37,7 @@ const Newsletter = () =>{
     return(
         <>
           <TopBar title={`MONTHLY NEWSLETTER`}></TopBar>
-          <LatestRealease latestNewsletter={latestNewsletter}></LatestRealease>
+          {response.volume!=undefined && <LatestRealease latestNewsletter={latestNewsletter}></LatestRealease>}
           <VoulmesAndSubscription></VoulmesAndSubscription>
           <EditorialCommittee></EditorialCommittee>
         </>
