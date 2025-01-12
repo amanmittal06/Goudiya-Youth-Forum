@@ -1,5 +1,6 @@
 import axios from "axios"
 import TopBar from "./TopBar"
+import styles from "./NewsLetter.module.css"
 import LatestRealease from "./LatestRealease"
 import VoulmesAndSubscription from "./VoulumesAndSubscription"
 import EditorialCommittee from "./EditorialCommittee"
@@ -37,7 +38,7 @@ const Newsletter = () =>{
     return(
         <>
           <TopBar title={`MONTHLY NEWSLETTER`}></TopBar>
-          {response.volume!=undefined && <LatestRealease latestNewsletter={latestNewsletter}></LatestRealease>}
+          {response.volume!=undefined && <div className={styles.latest}><LatestRealease latestNewsletter={latestNewsletter}></LatestRealease></div>}
           <VoulmesAndSubscription></VoulmesAndSubscription>
           <EditorialCommittee></EditorialCommittee>
         </>
