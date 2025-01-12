@@ -27,10 +27,12 @@ const Newsletter = () =>{
     }, [])
 
     useEffect(()=>{
-      let newsletter = [
-        {id:response._id, title:`GYF NEWSLETTER VOLUME-${response.volume}`, description: response.description, coverPage: response.coverImage, downloadLink: response.address}
-      ];
-      setLatestNewsletter(newsletter)
+      if(response){
+        let newsletter = [
+          {id:response._id, title:`GYF NEWSLETTER VOLUME-${response.volume}`, description: response.description, coverPage: response.coverImage, downloadLink: response.address}
+        ];
+        setLatestNewsletter(newsletter)
+      }
     }, [response])
   
    
