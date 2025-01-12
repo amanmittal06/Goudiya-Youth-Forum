@@ -16,7 +16,7 @@ const Newsletter = () =>{
      try {
         const response = await axios.get(`https://gyf-backend.vercel.app/newsletters/latest`);
         let newsletter = [
-          {id:response.id, title:`GYF NEWSLETTER VOLUME-${response.volume}`, description: response.description, coverPage: response.coverImage, downloadLink: response.address}
+          {id:response._id, title:`GYF NEWSLETTER VOLUME-${response.volume}`, description: response.description, coverPage: response.coverImage, downloadLink: response.address}
         ];
         setLatestNewsletter(newsletter)
      } catch (error) {
