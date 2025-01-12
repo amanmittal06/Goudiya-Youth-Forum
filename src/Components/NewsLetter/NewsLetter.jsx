@@ -15,7 +15,7 @@ const Newsletter = () =>{
 
     const fetchNewsletter = async() =>{
      try {
-        const res = await axios.get(`http://localhost:8080/newsletters/latest`);
+        const res = await axios.get(`https://gyf-backend.vercel.app/newsletters/latest`);
         setResponse(res.data[0]);
      } catch (error) {
         console.error('Error while fetching user details:', error);
