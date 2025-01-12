@@ -15,12 +15,8 @@ const Newsletter = () =>{
 
     const fetchNewsletter = async() =>{
      try {
-        const res = await axios.get(`https://gyf-backend.vercel.app/newsletters/latest`);
-        setResponse(res.data);
-        let newsletter = [
-          {id:response._id, title:`GYF NEWSLETTER VOLUME-${response.volume}`, description: response.description, coverPage: response.coverImage, downloadLink: response.address}
-        ];
-        setLatestNewsletter(newsletter)
+        const res = await axios.get(`http://localhost:8080/newsletters/latest`);
+        setResponse(res.data[0]);
      } catch (error) {
         console.error('Error while fetching user details:', error);
      }
@@ -30,7 +26,12 @@ const Newsletter = () =>{
       fetchNewsletter();
     }, [])
 
-   
+    useEffect(()=>{
+      let newsletter = [
+        {id:response._id, title:`GYF NEWSLETTER VOLUME-${response.volume}`, description: response.description, coverPage: response.coverImage, downloadLink: response.address}
+      ];
+      setLatestNewsletter(newsletter)
+    }, [response])
   
    
     return(
