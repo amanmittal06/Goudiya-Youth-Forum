@@ -14,7 +14,7 @@ import { useEffect } from "react";
 const bottomNavBarItems = [
     {name:'Home' , address:"/" , icon: <AiFillHome/> },
     {name:'Newsletter' , address:"/newsletter" , icon: <IoNewspaper/>},
-    {name:'Store' , address:"/store" , icon: <FaCartShopping/>},
+    // {name:'Store' , address:"/store" , icon: <FaCartShopping/>},
     {name:'About us' , address:"/about-us" , icon: <IoIosPeople/>},
 ];
 
