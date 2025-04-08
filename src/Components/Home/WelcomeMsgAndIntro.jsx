@@ -48,14 +48,14 @@ const WelcomeMsgAndIntro=()=>{
                </div> */}
                {/* <RecentActivities></RecentActivities> */}
                {/* <div style= {{margin:'0% 0% 10% 0%'}}><Carousel slides={slides}></Carousel></div> */}
-               <div className={styles.videoWrapper}>
+               {/* <div className={styles.videoWrapper}>
                <iframe
                 className={styles.videoIframe}
                 src={`https://www.youtube.com/embed/Fx9E40flD-E?si=ymLymFkoL5cTAp9v`}
                 title="YouTube Video"
                 allowFullScreen
                ></iframe>
-               </div>
+               </div> */}
                <div className={styles.aboutHeading}>About Goudiya Youth Forum</div>
                <div className={styles.aboutDescription}>At the Goudiya Youth Forum, we are committed to nurturing a community where young individuals delve into the profound teachings of scriptures such as Shrimad Bhagavad Gita. Our programs include <strong>regular classes</strong> that explore scripture deeply, transformative <strong>workshops</strong>, and immersive <strong>spiritual study tours</strong> that provide hands-on learning experiences. These initiatives are designed to inspire personal growth, spiritual enlightenment, and the practical application of timeless wisdom.  
                </div>
