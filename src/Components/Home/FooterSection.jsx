@@ -24,7 +24,7 @@ const FooterSection = () =>{
               <a className ={styles.footerLinks}href="https://www.facebook.com/gaudiyayouthforum" target='_blank'><FaFacebook/></a>
               <a className ={styles.footerLinks}href="mailto:goudiyayouthforum05@gmail.com" target='_blank'><CgMail/></a>
              </div>
-             <div className={styles.copyright}><PiCopyrightLight/> 2024 Goudiya Youth Forum</div>
+             <div className={styles.copyright}><PiCopyrightLight/> 2025 Goudiya Youth Forum</div>
             </center>
         </div>
     )
