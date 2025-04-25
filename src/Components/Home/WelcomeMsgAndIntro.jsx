@@ -3,6 +3,7 @@
 import styles from './WelcomeMsgAndIntro.module.css'
 import { RxCross2 } from "react-icons/rx";
 import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 // import Image1 from './Images/Home1.jpg'
 // import Image2 from './Images/Home2.jpg'
 // import Image3 from './Images/Home3.jpg'
@@ -26,6 +27,12 @@ const WelcomeMsgAndIntro=()=>{
     //     // Add more slides as needed
     //   ];
     
+    const navigate = useNavigate();
+
+    function handleOnClick(){
+      navigate('/register' , {state: {chapterValue:undefined}});
+    }
+
     function handleCancelButton(){
         const element = document.getElementsByClassName(styles.welcomeMessage)
         for (let i = 0; i < element.length; i++) {
