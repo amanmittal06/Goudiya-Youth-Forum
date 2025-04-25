@@ -51,8 +51,8 @@ const WelcomeMsgAndIntro=()=>{
                  <div className={styles.cancelButton}><RxCross2 onClick={handleCancelButton}/></div>
                  <div className={styles.welcomeHeading}>Register now!</div>
                  <div className={styles.intro}>Step into a transformative journey with Goudiya Youth Forum, dedicated to empowering youth through the profound wisdom of ancient scriptures!</div>
-                 {/* <button className={styles.registerButton} onClick={()=>{handleOnClick()}}>Register</button> */}
-                 <Link to='/register' className={styles.registerButton}>Register</Link>
+                 <button className={styles.registerButton} onClick={()=>{handleOnClick()}}>Register</button>
+                 {/* <Link to='/register' className={styles.registerButton}>Register</Link> */}
                </div>
                {/* <RecentActivities></RecentActivities> */}
                {/* <div style= {{margin:'0% 0% 10% 0%'}}><Carousel slides={slides}></Carousel></div> */}
