@@ -12,7 +12,7 @@ const allVolumes = [
   ];
   
 
-const itemsPerPage =5;
+const itemsPerPage =2;
 
 const AllVolumes = () => {
 
