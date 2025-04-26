@@ -131,7 +131,7 @@ const ProductCard = () => {
         //   console.log(err);
         //   alert('Something went wrong');
         // }
-        currOrder = {...currOrder, amount:amount}
+      currOrder = {...currOrder, amount:amount, name:user.email}
       try{
         const res = await axios.post('https://gyf-backend.vercel.app/payments/checkout/', currOrder);
         const {data} = res;
@@ -155,7 +155,7 @@ const ProductCard = () => {
         };
         const razor = new window.Razorpay(options);
         razor.open();
-        window.location.reload(false);
+        window.location.reload(true);
 
       }
       catch(err){
