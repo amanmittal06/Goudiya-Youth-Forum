@@ -11,7 +11,7 @@ const VoulmesAndSubscription = () => {
           </p>
           <Subscription></Subscription>
           {/* <p className={styles.aboutHeading}>Archives</p>  */}
-          {/* <AllVolumesButton></AllVolumesButton> */}
+          <AllVolumesButton></AllVolumesButton>
                     
         </div>
 

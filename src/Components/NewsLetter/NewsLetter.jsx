@@ -35,7 +35,7 @@ const Newsletter = () =>{
     // }, [response])
 
     const latestNewsletter = [
-      {id:'1', title:'GYF NEWSLETTER VOLUME-16', description: undefined, coverPage: "/newsletters/CoverImages/CoverImageVol16.png", downloadLink: "/newsletters/volume16.pdf"}
+      {id:'1', title:'GYF NEWSLETTER VOLUME-18', description: undefined, coverPage: "/newsletters/CoverImages/CoverImageVol18.png", downloadLink: "/newsletters/volume18.pdf"}
     ];
 
    

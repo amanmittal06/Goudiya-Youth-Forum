@@ -1,22 +1,15 @@
 import { useState } from "react";
 import NewsLetterCard from "./NewsLetterCard";
-import vol10CoverPage from './Images/vol10CoverPage.jpg'
+import "/newsletters/CoverImages/CoverImageVol16.png" from './Images/"/newsletters/CoverImages/CoverImageVol16.png".jpg'
 import ScrollToTop from "../ScrollToTop";
 import styles from './AllVolumes.module.css'
 import { useLocation } from "react-router-dom";
 
 const allVolumes = [
-    {id:'11', title:'GYF NEWSLETTER VOLUME-11', description: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aut, culpa impedit voluptatibus suscipit quidem sunt ducimus rem molestias voluptates deserunt doloremque voluptas eaque eligendi tempora harum! Rerum odit quaerat explicabo.', coverPage: vol10CoverPage, downloadLink: undefined},
-    {id:'1', title:'GYF NEWSLETTER VOLUME-10', description: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aut, culpa impedit voluptatibus suscipit quidem sunt ducimus rem molestias voluptates deserunt doloremque voluptas eaque eligendi tempora harum! Rerum odit quaerat explicabo.', coverPage: vol10CoverPage, downloadLink: undefined},
-    {id:'2', title:'GYF NEWSLETTER VOLUME-9', description: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aut, culpa impedit voluptatibus suscipit quidem sunt ducimus rem molestias voluptates deserunt doloremque voluptas eaque eligendi tempora harum! Rerum odit quaerat explicabo.', coverPage: vol10CoverPage, downloadLink: undefined},
-    {id:'3', title:'GYF NEWSLETTER VOLUME-8', description: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aut, culpa impedit voluptatibus suscipit quidem sunt ducimus rem molestias voluptates deserunt doloremque voluptas eaque eligendi tempora harum! Rerum odit quaerat explicabo.', coverPage: vol10CoverPage, downloadLink: undefined},
-    {id:'4', title:'GYF NEWSLETTER VOLUME-7', description: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aut, culpa impedit voluptatibus suscipit quidem sunt ducimus rem molestias voluptates deserunt doloremque voluptas eaque eligendi tempora harum! Rerum odit quaerat explicabo.', coverPage: vol10CoverPage, downloadLink: undefined},
-    {id:'5', title:'GYF NEWSLETTER VOLUME-6', description: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aut, culpa impedit voluptatibus suscipit quidem sunt ducimus rem molestias voluptates deserunt doloremque voluptas eaque eligendi tempora harum! Rerum odit quaerat explicabo.', coverPage: vol10CoverPage, downloadLink: undefined},
-    {id:'6', title:'GYF NEWSLETTER VOLUME-5', description: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aut, culpa impedit voluptatibus suscipit quidem sunt ducimus rem molestias voluptates deserunt doloremque voluptas eaque eligendi tempora harum! Rerum odit quaerat explicabo.', coverPage: vol10CoverPage, downloadLink: undefined},
-    {id:'7', title:'GYF NEWSLETTER VOLUME-4', description: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aut, culpa impedit voluptatibus suscipit quidem sunt ducimus rem molestias voluptates deserunt doloremque voluptas eaque eligendi tempora harum! Rerum odit quaerat explicabo.', coverPage: vol10CoverPage, downloadLink: undefined},
-    {id:'8', title:'GYF NEWSLETTER VOLUME-3', description: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aut, culpa impedit voluptatibus suscipit quidem sunt ducimus rem molestias voluptates deserunt doloremque voluptas eaque eligendi tempora harum! Rerum odit quaerat explicabo.', coverPage: vol10CoverPage, downloadLink: undefined},
-    {id:'9', title:'GYF NEWSLETTER VOLUME-2', description: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aut, culpa impedit voluptatibus suscipit quidem sunt ducimus rem molestias voluptates deserunt doloremque voluptas eaque eligendi tempora harum! Rerum odit quaerat explicabo.', coverPage: vol10CoverPage, downloadLink: undefined},
-    {id:'10', title:'GYF NEWSLETTER VOLUME-1', description: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aut, culpa impedit voluptatibus suscipit quidem sunt ducimus rem molestias voluptates deserunt doloremque voluptas eaque eligendi tempora harum! Rerum odit quaerat explicabo.', coverPage: vol10CoverPage, downloadLink: undefined},
+  {id:'1', title:'GYF NEWSLETTER VOLUME-18', description: undefined, coverPage: "/newsletters/CoverImages/CoverImageVol18.png", downloadLink: "/newsletters/volume18.pdf"},
+  {id:'1', title:'GYF NEWSLETTER VOLUME-17', description: undefined, coverPage: "/newsletters/CoverImages/CoverImageVol17.png", downloadLink: "/newsletters/volume17.pdf"},
+  {id:'1', title:'GYF NEWSLETTER VOLUME-16', description: undefined, coverPage: "/newsletters/CoverImages/CoverImageVol16.png", downloadLink: "/newsletters/volume16.pdf"}
+    
   ];
   
 
