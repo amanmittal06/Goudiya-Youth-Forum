@@ -1,13 +1,12 @@
 import { useState } from "react";
 import NewsLetterCard from "./NewsLetterCard";
-import "/newsletters/CoverImages/CoverImageVol16.png" from './Images/"/newsletters/CoverImages/CoverImageVol16.png".jpg'
 import ScrollToTop from "../ScrollToTop";
 import styles from './AllVolumes.module.css'
 import { useLocation } from "react-router-dom";
 
 const allVolumes = [
-  {id:'1', title:'GYF NEWSLETTER VOLUME-18', description: undefined, coverPage: "/newsletters/CoverImages/CoverImageVol18.png", downloadLink: "/newsletters/volume18.pdf"},
-  {id:'1', title:'GYF NEWSLETTER VOLUME-17', description: undefined, coverPage: "/newsletters/CoverImages/CoverImageVol17.png", downloadLink: "/newsletters/volume17.pdf"},
+  {id:'3', title:'GYF NEWSLETTER VOLUME-18', description: undefined, coverPage: "/newsletters/CoverImages/CoverImageVol18.png", downloadLink: "/newsletters/volume18.pdf"},
+  {id:'2', title:'GYF NEWSLETTER VOLUME-17', description: undefined, coverPage: "/newsletters/CoverImages/CoverImageVol17.png", downloadLink: "/newsletters/volume17.pdf"},
   {id:'1', title:'GYF NEWSLETTER VOLUME-16', description: undefined, coverPage: "/newsletters/CoverImages/CoverImageVol16.png", downloadLink: "/newsletters/volume16.pdf"}
     
   ];
