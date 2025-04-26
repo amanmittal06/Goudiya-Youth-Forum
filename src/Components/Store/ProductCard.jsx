@@ -155,6 +155,7 @@ const ProductCard = () => {
         };
         const razor = new window.Razorpay(options);
         razor.open();
+        window.location.reload(false);
 
       }
       catch(err){
