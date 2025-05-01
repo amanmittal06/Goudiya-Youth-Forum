@@ -4,6 +4,10 @@ import Poster from './Images/Poster.png'
 import { RxCross2 } from "react-icons/rx";
 import { useLocation } from 'react-router-dom';
 import { useState } from 'react';
+import PhoneInput from 'react-phone-input-2';
+import "react-phone-input-2/lib/style.css";
+import { isValidPhoneNumber } from 'libphonenumber-js';
+import './phoneInput.css'
 import axios from 'axios'
 
 
@@ -15,15 +19,24 @@ const RegistrationForm = () =>{
 
     console.log(chapterValue);
 
-      const initialUserData = {fullName: "" , mobile: "" , email : "" , chapter : chapterValue }
+      const initialUserData = {fullName: "" , mobile: undefined , email : "" , chapter : chapterValue }
 
       const [userData, setUserData] = useState(initialUserData);
 
       function handleChange(e){
+          console.log(e.target.value)
           setUserData(
             {...userData, [e.target.name]:e.target.value}
           )
       }
+
+      const handlePhoneChange = (value) => {
+        setUserData({ ...userData, mobile: value });
+      
+        if (value && !isValidPhoneNumber(value)) {
+          alert('Invalid phone number');
+        }
+      };
     
       const addUser =  async () =>{
 
@@ -53,7 +66,7 @@ const RegistrationForm = () =>{
             <label className={styles.labels} htmlFor="fullName">Full name</label><br />
             <input className={styles.inputs} type="text" name='fullName' value={userData.fullName} id='fullName'placeholder='Enter your full name' required onChange={(event)=>{handleChange(event)}}/><br />
             <label className={styles.labels} htmlFor="mobile">Mobile no.</label><br />
-            <input className={styles.inputs} type="tel" name='mobile' value={userData.mobile} id="mobile" placeholder='Enter your mobile no.' required onChange={(event)=>{handleChange(event)}}/><br />
+            <PhoneInput  name='mobile' value={userData.mobile} country={"in"} id="mobile" placeholder='Enter your mobile no.' required onChange={()=>{handlePhoneChange}}/><br />
             <label className={styles.labels} htmlFor="email">Email</label><br />
             <input className={styles.inputs} type="email" name='email' value={userData.email}  id="email" placeholder='Enter your email address' onChange={(event)=>{handleChange(event)}}/><br />
             <label className={styles.labels} htmlFor="chapter">Select chapter</label><br />
