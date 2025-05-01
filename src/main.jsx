@@ -13,6 +13,7 @@ import RegistrationForm from './Components/Home/RegistrationForm.jsx'
 import MyOrders from './Components/Store/MyOrders.jsx'
 import AllOrders from './Components/Store/AllOrders.jsx'
 import Admin from './Components/Store/Admin.jsx'
+import Registrees from './Components/Home/Registrees.jsx'
 import { Auth0Provider } from '@auth0/auth0-react'
 
 
@@ -41,6 +42,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
         <Route path='/register' element={<RegistrationForm />} />
         <Route path='/orders' element={ <MyOrders/> } />
         <Route path='/admin' element={<Admin/>}/>
+        <Route path='/registrees' element={<Registrees/>}/>
         <Route path='/allorders' element={ <AllOrders/> } />
       </Routes>
     </BrowserRouter>  
