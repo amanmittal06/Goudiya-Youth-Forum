@@ -19,7 +19,7 @@ const RegistrationForm = () =>{
 
     console.log(chapterValue);
 
-      const initialUserData = {fullName: "" , mobile: undefined , email : "" , chapter : chapterValue }
+      const initialUserData = {fullName: "" , mobile: "91", email : "" , chapter : chapterValue }
 
       const [userData, setUserData] = useState(initialUserData);
 
