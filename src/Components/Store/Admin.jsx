@@ -36,7 +36,7 @@ const Admin  = () =>{
         isAuthenticated && loggedinUser && loggedinUser.isAdmin===true?
         <div className={styles.container}>
             <Link to={"/allorders"} className={styles.buttons}>Orders</Link>
-            <Link className={styles.buttons}>Registrations</Link>
+            <Link to={"/registrees"} className={styles.buttons}>Registrations</Link>
         </div>
         :
         <center className={styles.externalAccess}>

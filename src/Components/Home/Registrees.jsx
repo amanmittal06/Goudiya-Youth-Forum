@@ -65,7 +65,7 @@ const Registrees = () =>{
         :
         (
             registrees.map((registree)=><div key={registree.id} className={styles.innerContainer}>
-               <p className={styles.name}>{registree.name}</p>
+               <p className={styles.name}>{registree.fullName}</p>
                <div className={styles.buttonContainer}>
                <a  href={`tel:${registree.mobile}`} target='_blank' className={styles.callButton}><IoMdCall/></a>
                <a  href={`https://wa.me/${registree.mobile}`} className={styles.whatsAppButton}><FaWhatsapp/></a>
