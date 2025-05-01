@@ -1,0 +1,64 @@
+
+.outerContainer{
+    padding: 5% ;
+    background-color: whitesmoke;
+    height: 100vh;
+}
+
+.innerContainer{
+    padding:5% 5% 8% 5%;
+    border-bottom: 1px solid black;
+}
+
+.name{
+    text-transform:capitalize;
+    font-size: large;
+    padding: 10px;
+}
+
+.buttonContainer{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.whatsAppButton, .whatsAppButton:visited{
+    color: white;
+    font-size: 150%;
+    font-weight: 900;
+    background-color: green;
+    width: 45%;
+    text-align: center;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+}
+
+.callButton, .callButton:visited{
+    color: white;
+    font-size: 150%;
+    background-color: gray;
+    width: 45%;
+    /* text-align: center; */
+    border-radius: 20px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+}
+
+.loginButton{
+    background-color: #6950a3;
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
+
+.externalAccess{
+    margin-top: 10%;
+}

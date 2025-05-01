@@ -1,21 +1,95 @@
 import { FaWhatsapp } from "react-icons/fa6";
 import { IoMdCall} from "react-icons/io";
+import styles from './Registrees.module.css'
+import { useAuth0 } from "@auth0/auth0-react";
+import { useState, useEffect } from "react";
+import axios from "axios";
+
 
 const Registrees = () =>{
 
-    let registrees = [
-        {id:1, name:'Aman Mittal', mobile: 916388082087, email:'amanagrawal0139@gmail.com'},
-        {id:2, name:'Ishaan Taneja', mobile: 919205155401, email:'amanagrawal0139@gmail.com'}
-    ]
+    const [registrees, setRegistrees] = useState([]);
+    const {isAuthenticated, user, loginWithPopup} = useAuth0();
+    const [loggedinUser, setLoggedinUser] = useState(undefined);
+    let [userFetched, setUserFetched] = useState(false);
+    let [registreeFetched, setRegistreeFetched] = useState(false);
+   
+
+    const loadRegistrees = async() =>{
+     try{
+        const res = await axios.get(`https://gyf-backend.vercel.app/users/`)
+        setRegistrees(res.data);
+     }
+     catch(err){
+        console.log(err);
+     }
+    }
+
+    const fetchUser = async() =>{
+        try {
+            const response = await axios.get(`https://gyf-backend.vercel.app/storeusers/${user.email}`);
+            setLoggedinUser(response.data);
+        } catch (error) {
+            console.error('Error while fetching user details:', error);
+        }
+    }
+
+
+    useEffect(()=>{
+       if(isAuthenticated && user){
+         fetchUser();
+         loadRegistrees();
+       }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [isAuthenticated, user]);
+
+    setTimeout(()=>{
+      setUserFetched(true);
+    },2500)
+
+    setTimeout(()=>{
+      setRegistreeFetched(true);
+    },3500)
     
     return (
-        <ul>
-            {registrees.map((registree)=><li key={registree.id}>
-               <p>{registree.name}</p>
-               <a  href={`https://wa.me/${registree.mobile}`}><FaWhatsapp/></a>
-               <a  href={`tel:${registree.mobile}`} target='_blank'><IoMdCall/></a>
-            </li>)}
-        </ul>
+        isAuthenticated && loggedinUser && loggedinUser.isAdmin===true? 
+        <div className={styles.outerContainer}>
+        {
+        registrees.length===0?
+        (
+            registreeFetched===true?
+            <div>No registrations have been made yet</div>
+            :
+            <div>Please wait...</div>
+        )     
+        :
+        (
+            registrees.map((registree)=><div key={registree.id} className={styles.innerContainer}>
+               <p className={styles.name}>{registree.name}</p>
+               <div className={styles.buttonContainer}>
+               <a  href={`tel:${registree.mobile}`} target='_blank' className={styles.callButton}><IoMdCall/></a>
+               <a  href={`https://wa.me/${registree.mobile}`} className={styles.whatsAppButton}><FaWhatsapp/></a>
+               </div>
+            </div>)
+        )
+        }
+        </div>
+        :  
+        <center className={styles.externalAccess}>
+            {userFetched==true?
+            (
+            isAuthenticated===true?
+            <div>Unauthorized access!</div>
+            :
+            <div style={{marginTop:'40vh'}}>
+                <div>Your are not logged in.<br/>Please login to continue</div>
+                <button onClick={()=>loginWithPopup()} className={styles.loginButton}>Log in</button>
+            </div>
+            )
+            :
+            <div>Please wait...</div>
+            }
+        </center>        
     )
 }
 
