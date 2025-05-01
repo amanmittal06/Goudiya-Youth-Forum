@@ -1,0 +1,38 @@
+.container{
+    height: 100vh;
+    width: 100%;
+    background-color: whitesmoke; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.buttons{
+    text-decoration: none;
+    font-size: 95%;
+    border: none;
+    background: none;
+    width: max-content;
+    padding: 10px 5px 10px 5px;
+    margin-bottom:2px ;
+    border-bottom: 0.5px solid #6950a3;
+    width: 90%;
+    text-align: left;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    /* text-transform: uppercase; */
+    color: black;
+}
+
+.loginButton{
+    background-color: #6950a3;
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
+
+.externalAccess{
+    margin-top: 10%;
+}
