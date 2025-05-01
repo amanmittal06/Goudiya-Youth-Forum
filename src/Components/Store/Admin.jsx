@@ -6,7 +6,7 @@ import axios from 'axios';
 
 const Admin  = () =>{
 
-    const {isAuthenticated, user, loginWithPopup} = useAuth0;
+    const {isAuthenticated, user, loginWithPopup} = useAuth0();
     const [loggedinUser, setLoggedinUser] = useState(undefined);
     let [userFetched, setUserFetched] = useState(false);
 
