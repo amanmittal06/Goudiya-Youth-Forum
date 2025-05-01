@@ -4,8 +4,8 @@ import { IoMdCall} from "react-icons/io";
 const Registrees = () =>{
 
     let registrees = [
-        {id:1, name:'Aman Mittal', mobile: 6388082087, email:'amanagrawal0139@gmail.com'},
-        {id:2, name:'Ishaan Taneja', mobile: 9205155401, email:'amanagrawal0139@gmail.com'}
+        {id:1, name:'Aman Mittal', mobile: 916388082087, email:'amanagrawal0139@gmail.com'},
+        {id:2, name:'Ishaan Taneja', mobile: 919205155401, email:'amanagrawal0139@gmail.com'}
     ]
     
     return (

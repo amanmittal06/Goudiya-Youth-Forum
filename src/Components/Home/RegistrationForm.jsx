@@ -32,10 +32,6 @@ const RegistrationForm = () =>{
 
       const handlePhoneChange = (value) => {
         setUserData({ ...userData, mobile: value });
-      
-        if (value && !isValidPhoneNumber(value)) {
-          alert('Invalid phone number');
-        }
       };
     
       const addUser =  async () =>{
@@ -66,7 +62,7 @@ const RegistrationForm = () =>{
             <label className={styles.labels} htmlFor="fullName">Full name</label><br />
             <input className={styles.inputs} type="text" name='fullName' value={userData.fullName} id='fullName'placeholder='Enter your full name' required onChange={(event)=>{handleChange(event)}}/><br />
             <label className={styles.labels} htmlFor="mobile">Mobile no.</label><br />
-            <PhoneInput  name='mobile' value={userData.mobile} country={"in"} id="mobile" placeholder='Enter your mobile no.' required onChange={()=>{handlePhoneChange}}/><br />
+            <PhoneInput  name='mobile' value={userData.mobile} country={"in"} id="mobile" placeholder='Enter your mobile no.' required onChange={(phone)=>{handlePhoneChange(phone)}}/><br />
             <label className={styles.labels} htmlFor="email">Email</label><br />
             <input className={styles.inputs} type="email" name='email' value={userData.email}  id="email" placeholder='Enter your email address' onChange={(event)=>{handleChange(event)}}/><br />
             <label className={styles.labels} htmlFor="chapter">Select chapter</label><br />
