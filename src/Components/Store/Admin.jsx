@@ -13,6 +13,7 @@ const Admin  = () =>{
     const fetchUser = async() =>{
         try {
             const response = await axios.get(`https://gyf-backend.vercel.app/storeusers/${user.email}`);
+            console.log(response.data);
             setLoggedinUser(response.data);
         } catch (error) {
             console.error('Error while fetching user details:', error);
