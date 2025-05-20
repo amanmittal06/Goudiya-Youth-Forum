@@ -1,7 +1,7 @@
 
 .outerContainer{
     padding: 5% ;
-    background-color: whitesmoke;
+    background-color: white;
     height: 100vh;
 }
 
@@ -14,6 +14,10 @@
     text-transform:capitalize;
     font-size: large;
     padding: 10px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
 }
 
 .buttonContainer{

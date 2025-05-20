@@ -4,7 +4,9 @@ import styles from './Registrees.module.css'
 import { useAuth0 } from "@auth0/auth0-react";
 import { useState, useEffect } from "react";
 import axios from "axios";
-
+// import Dropdown from 'react-dropdown';
+// import 'react-dropdown/style.css';
+import './Registrees.css'
 
 const Registrees = () =>{
 
@@ -13,6 +15,11 @@ const Registrees = () =>{
     const [loggedinUser, setLoggedinUser] = useState(undefined);
     let [userFetched, setUserFetched] = useState(false);
     let [registreeFetched, setRegistreeFetched] = useState(false);
+    const options = [
+        'Delhi Chapter', 'Noida Chapter', 'International Chapter'
+    ];
+    const defaultOption = options[0];
+     
    
 
     const loadRegistrees = async() =>{
@@ -36,6 +43,7 @@ const Registrees = () =>{
 
 
     useEffect(()=>{
+       loadRegistrees(); 
        if(isAuthenticated && user){
          fetchUser();
          loadRegistrees();
@@ -52,7 +60,8 @@ const Registrees = () =>{
     },3500)
     
     return (
-        isAuthenticated && loggedinUser && loggedinUser.isAdmin===true? 
+        // isAuthenticated && loggedinUser && loggedinUser.isAdmin===true? 
+        userFetched===true?
         <div className={styles.outerContainer}>
         {
         registrees.length===0?
@@ -64,13 +73,26 @@ const Registrees = () =>{
         )     
         :
         (
-            registrees.map((registree)=><div key={registree.id} className={styles.innerContainer}>
-               <p className={styles.name}>{registree.fullName}</p>
+            <>
+            {/* <Dropdown options={options} className='myClassName' controlClassName='myControlClassName' value={defaultOption} placeholder="Select an option" /> */}
+            {registrees.map((registree)=><div key={registree.id} className={styles.innerContainer}>
+               <p className={styles.name}>
+                <p style={{fontSize:'large'}}>{registree.fullName}</p>
+                <p style={{fontSize:'smaller'}}>{registree.chapter}</p>
+                </p>
+
                <div className={styles.buttonContainer}>
-               <a  href={`tel:${registree.mobile}`} target='_blank' className={styles.callButton}><IoMdCall/></a>
-               <a  href={`https://wa.me/${registree.mobile}`} className={styles.whatsAppButton}><FaWhatsapp/></a>
+               <a  href={`tel:+${registree.mobile}`} target='_blank' className={styles.callButton}><IoMdCall/></a>
+               <a  href={`https://wa.me/+${registree.mobile}`} className={styles.whatsAppButton}><FaWhatsapp/></a>
                </div>
-            </div>)
+            </div>)}
+            <div>
+               <button></button>
+               <button></button>
+               <button></button>
+            </div>
+            </>
+            
         )
         }
         </div>
