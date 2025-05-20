@@ -86,11 +86,7 @@ const Registrees = () =>{
                <a  href={`https://wa.me/+${registree.mobile}`} className={styles.whatsAppButton}><FaWhatsapp/></a>
                </div>
             </div>)}
-            <div>
-               <button></button>
-               <button></button>
-               <button></button>
-            </div>
+    
             </>
             
         )
